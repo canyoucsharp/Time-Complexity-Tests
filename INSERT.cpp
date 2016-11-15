@@ -2,11 +2,12 @@
 #include <time.h>
 #include <ctime>
 
-//test
+
 using namespace std;
 
-void InsertionSort(int i, int array[], int size);
-int random();
+
+void insertion_sort(int arr[], int length);
+int random(int n);
 
 int main()
 {
@@ -18,17 +19,18 @@ int main()
 
 	for (int i = 0; i< n; i++)
 	{
-		A[i] = random();
+		A[i] = random(n);
 	}
 
 	clock_t t1, t2;
 
 	t1 = clock();
 
-	InsertionSort(0, A, n);
+	insertion_sort(A, n);
 
 	t2 = clock();
 	float diff((float)t2 - (float)t1);
+	float seconds = diff / CLOCKS_PER_SEC;
 
 	for (int q = 0; q < n; q++)
 	{
@@ -37,32 +39,31 @@ int main()
 
 	cout << endl;
 	std::cout << diff << std::endl;
-	float seconds = diff / CLOCKS_PER_SEC;
 	std::cout << seconds << std::endl;
 
 	delete[] A;
 	system("pause");
 }
 
-void InsertionSort(int i, int array[], int size)
-{
-	if (i < size)
-	{
-		int z;
-		int temp = array[i];
+void insertion_sort(int arr[], int length) {
+	int j, temp;
 
-		for (z = i; z > 0 && array[z - 1] > temp; z--)
-			array[z] = array[z - 1];
-		array[z] = temp;
+	for (int i = 0; i < length; i++) {
+		j = i;
 
-		InsertionSort(i + 1, array, size);
+		while (j > 0 && arr[j] < arr[j - 1]) {
+			temp = arr[j];
+			arr[j] = arr[j - 1];
+			arr[j - 1] = temp;
+			j--;
+		}
 	}
 }
 
-int random()
+int random(int n)
 {
 	int currentrandom;
-	currentrandom = rand();
+	currentrandom = rand() % n;
 
 	return currentrandom;
 }
