@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <time.h>
 #include <ctime>
@@ -17,6 +18,25 @@ int main()
 	cin >> n;
 	int* A = new int[n];
 
+=======
+#include <iostream>
+#include <time.h>
+#include <ctime>
+
+using namespace std;
+
+void InsertionSort(int i, int array[], int size);
+int random();
+
+int main()
+{
+	int n;
+
+	cout << "How big should this array be?" << endl;
+	cin >> n;
+	int* A = new int[n];
+
+>>>>>>> origin/master
 	for (int i = 0; i< n; i++)
 	{
 		A[i] = random(n);
