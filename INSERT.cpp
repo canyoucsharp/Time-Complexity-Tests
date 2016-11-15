@@ -2,7 +2,6 @@
 #include <time.h>
 #include <ctime>
 
-//test
 using namespace std;
 
 void InsertionSort(int i, int array[], int size);
