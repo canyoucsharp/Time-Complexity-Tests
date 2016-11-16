@@ -50,7 +50,8 @@ private://use significant names , Partition for quicksort = QuickPartition
 		
 	//general stuff
 	int random(int n);
-	
+	void randomize(int arr[], int n);//shuffles a list of numbers
+	void swap(int *a, int *b);//swaps two numbers used for case 3
 	
 
 	//insertion sort stuff
