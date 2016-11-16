@@ -11,16 +11,31 @@ using namespace std;
 class Sorting
 {
 public://keep all main functions public and there subsidiary functions private.
-	Sorting();
-	~Sorting();
+	Sorting()
+	{
+		a100 = new int[100];
+		a200 = new int[200];
+		a300 = new int[300];
+		a400 = new int[400];
+		a500 = new int[500];
+		a1000 = new int[1000];
+		a2000= new int[2000];
+		a4000 = new int[4000];
+		a10000= new int[10000];
+
+	}
+	~Sorting()
+	{
+
+	}
 	
 	
 	
 	void case1();//initalize all the arrays to fit case 1 which is a sorted list of numbers
 	void case2();//initalize all the arrays to fit case 2 which is a sorted list of numbers backwards
 	void case3();//initialize all the arrays to fit case 3 which is a permuted list 
-	
-	
+	void test();
+	void display(int arr[], int size);
 	
 	
 	void insertion_sort(int arr[], int length);
@@ -73,6 +88,6 @@ private://use significant names , Partition for quicksort = QuickPartition
 	void QuickSwap(int* a, int* b);
 	int QuickPartition(int arr[], int low, int high);
 	
-}obj;
+};
 
 #endif
