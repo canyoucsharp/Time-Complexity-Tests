@@ -66,7 +66,7 @@ private://use significant names , Partition for quicksort = QuickPartition
 	int random(int n);
 	void randomize(int arr[], int n);//shuffles a list of numbers
 	void swap(int *a, int *b);//swaps two numbers used for case 3
-	void Print(int SortIdentifier, int CurrentSize);//will be called by count function including identifier
+	void Print(int SortIdentifier, int CurrentSize,int Case);//will be called by count function including identifier
 	/* 
 	Sort Identifiers :
 	Insertion Sort = 1
