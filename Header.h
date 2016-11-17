@@ -40,9 +40,6 @@ public://keep all main functions public and there subsidiary functions private.
 	
 	void insertion_sort(int arr[], int length);
 	void quickSort(int arr[], int low, int high);
-	void CreateArray(int arr[], int size);//user will choose what size array they will make , this function will create that array
-										  //said array will then be used for all functions , all functions will have exact same numbers the idea here is to not declare all arrays
-										  //at once and not waste ridiculous ammounts of memory.
 
 
 	//if we choose to not use this way the other posibility is to just have one array ...
