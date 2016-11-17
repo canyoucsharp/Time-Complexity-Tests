@@ -1,4 +1,4 @@
-void Sorting::Print(int SortIdentifier, int CurrentSize)
+void Sorting::Print(int SortIdentifier, int CurrentSize,int Case)
 {
 	/*
 	Sort Identifiers :
