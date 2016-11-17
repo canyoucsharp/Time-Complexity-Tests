@@ -14,7 +14,7 @@ class Sorting
 public://keep all main functions public and there subsidiary functions private.
 	Sorting()
 	{
-		myfile.open ("PUTFILENAMEHERE");
+		resultfile.open ("PUTFILENAMEHERE");
 		a100 = new int[100];
 		a200 = new int[200];
 		a300 = new int[300];
