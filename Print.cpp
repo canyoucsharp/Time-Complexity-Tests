@@ -1,3 +1,4 @@
+#include "Header.h"
 void Sorting::Print(int SortIdentifier, int CurrentSize,int Case)
 {
 	/*
