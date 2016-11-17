@@ -6,6 +6,7 @@
 #include <iostream>
 #include <time.h>
 #include <ctime>
+#include <fstream>
 using namespace std;
 
 class Sorting
@@ -13,6 +14,7 @@ class Sorting
 public://keep all main functions public and there subsidiary functions private.
 	Sorting()
 	{
+		resultfile.open ("PUTFILENAMEHERE");
 		a100 = new int[100];
 		a200 = new int[200];
 		a300 = new int[300];
@@ -26,7 +28,7 @@ public://keep all main functions public and there subsidiary functions private.
 	}
 	~Sorting()
 	{
-
+		resultfile.close();
 	}
 	
 	
@@ -64,7 +66,21 @@ private://use significant names , Partition for quicksort = QuickPartition
 	int random(int n);
 	void randomize(int arr[], int n);//shuffles a list of numbers
 	void swap(int *a, int *b);//swaps two numbers used for case 3
+	void Print(int SortIdentifier, int CurrentSize);//will be called by count function including identifier
+	/* 
+	Sort Identifiers :
+	Insertion Sort = 1
+	Selection Sort =2
+	Bubble Sort =3
+	Merge Sort =4
+	Quick Sort =5
+	*/
 	
+	
+	//GENERAL VARIABLES
+	int count;//COUNT FOR ALL FUNCTIONS
+	int time;//TIME FOR ALL FUNCTIONS
+	ofstream resultfile;
 
 	//insertion sort stuff
 	int inscounter;
