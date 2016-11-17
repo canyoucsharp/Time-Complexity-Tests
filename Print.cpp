@@ -12,23 +12,23 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case)
 	switch (SortIdentifier)
 	{
 			case 1:
-				resultfile << "Insertion Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count<<"\n";
+				resultfile << "Insertion Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count<< " Case = "<< Case<< "\n";
 			break;
 
 			case 2:
-				resultfile << "Selection Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count << "\n";
+				resultfile << "Selection Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count <<" Case = "<< Case<<  "\n";
 			break;
 
 			case 3:
-				resultfile << "Bubble Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count << "\n";
+				resultfile << "Bubble Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count <<" Case = "<< Case<<  "\n";
 			break;
 
 			case 4:
-				resultfile << "Merge Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count << "\n";
+				resultfile << "Merge Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count <<" Case = "<< Case<<  "\n";
 				break;
 
 			case 5:
-				resultfile << "Quick Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count << "\n";
+				resultfile << "Quick Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << count << " Case = "<< Case<< "\n";
 				break;
 	}
 
