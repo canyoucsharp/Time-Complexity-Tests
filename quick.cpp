@@ -58,36 +58,36 @@ void printArray(int arr[], int size)
 	printf("\n");
 }
 
-// Driver program to test above functions
-int main()
-{
-	int max;
-	std::cout << "Please intput how big the array will be:" << std::endl;
-	std::cin >> max;
-	int *arr= new int [max];
-
-	for (int i = 0; i < max; i++)
-	{
-		arr[i] = random(max);
-	}
-
-	clock_t t1, t2;
-	t1 = clock();
-	int n = sizeof(arr) / sizeof(arr[0]);
-	quickSort(arr, 0, max - 1);
-
-
-	t2 = clock();
-	float diff((float)t2 - (float)t1);
-	//code goes here
-	printf("Sorted array: \n");
-	printArray(arr, max);
-	std::cout << diff << std::endl;
-	float seconds = diff / CLOCKS_PER_SEC;
-	std::cout << seconds << std::endl;
-	system("pause");
-
-}
+//// Driver program to test above functions
+//int main()
+//{
+//	int max;
+//	std::cout << "Please intput how big the array will be:" << std::endl;
+//	std::cin >> max;
+//	int *arr= new int [max];
+//
+//	for (int i = 0; i < max; i++)
+//	{
+//		arr[i] = random(max);
+//	}
+//
+//	clock_t t1, t2;
+//	t1 = clock();
+//	int n = sizeof(arr) / sizeof(arr[0]);
+//	quickSort(arr, 0, max - 1);
+//
+//
+//	t2 = clock();
+//	float diff((float)t2 - (float)t1);
+//	//code goes here
+//	printf("Sorted array: \n");
+//	printArray(arr, max);
+//	std::cout << diff << std::endl;
+//	float seconds = diff / CLOCKS_PER_SEC;
+//	std::cout << seconds << std::endl;
+//	system("pause");
+//
+//}
 
 int random(int max)
 {

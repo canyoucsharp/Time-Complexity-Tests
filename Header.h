@@ -6,7 +6,9 @@
 #include <iostream>
 #include <time.h>
 #include <ctime>
-#include <fstream>
+#include <string>
+#include<fstream>
+#include <ostream>
 using namespace std;
 
 class Sorting
@@ -14,7 +16,6 @@ class Sorting
 public://keep all main functions public and there subsidiary functions private.
 	Sorting()
 	{
-		resultfile.open ("PUTFILENAMEHERE");
 		a100 = new int[100];
 		a200 = new int[200];
 		a300 = new int[300];
@@ -28,7 +29,7 @@ public://keep all main functions public and there subsidiary functions private.
 	}
 	~Sorting()
 	{
-		resultfile.close();
+
 	}
 	
 	
@@ -40,8 +41,11 @@ public://keep all main functions public and there subsidiary functions private.
 	void display(int arr[], int size);
 	
 	
-	void insertion_sort(int arr[], int length);
+
 	void quickSort(int arr[], int low, int high);
+	void CreateArray(int arr[], int size);//user will choose what size array they will make , this function will create that array
+										  //said array will then be used for all functions , all functions will have exact same numbers the idea here is to not declare all arrays
+										  //at once and not waste ridiculous ammounts of memory.
 
 
 	//if we choose to not use this way the other posibility is to just have one array ...
@@ -66,25 +70,12 @@ private://use significant names , Partition for quicksort = QuickPartition
 	int random(int n);
 	void randomize(int arr[], int n);//shuffles a list of numbers
 	void swap(int *a, int *b);//swaps two numbers used for case 3
-	void Print(int SortIdentifier, int CurrentSize,int Case);//will be called by count function including identifier
-	/* 
-	Sort Identifiers :
-	Insertion Sort = 1
-	Selection Sort =2
-	Bubble Sort =3
-	Merge Sort =4
-	Quick Sort =5
-	*/
+	void Print(int SortIdentifier, int CurrentSize, int Case, int arr[]);
 	
-	
-	//GENERAL VARIABLES
-	int count;//COUNT FOR ALL FUNCTIONS
-	int time;//TIME FOR ALL FUNCTIONS
-	ofstream resultfile;
 
 	//insertion sort stuff
-	int inscounter;
-
+	int insertion_sortSTEPS(int arr[], int length);//returns the number of steps it takes to complete
+	float Sorting::insertion_sortTime(int arr[], int length);
 	//selection sort stuff
 
 
