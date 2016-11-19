@@ -21,7 +21,7 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case,int arr[], ofst
 	case 1://insertion
 	
 			
-			 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << insertion_sortTime(arr, CurrentSize) << " Number of steps= "<< insertion_sortSTEPS(clone,CurrentSize) << " Case = " << Case << "\n";
+		 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << insertion_sortTime(arr, CurrentSize) << " Number of steps= "<< insertion_sortSTEPS(clone,CurrentSize) << " Case = " << Case << "\n";
 		 
 		 // display(arr, CurrentSize, resultfile);
 		 break;

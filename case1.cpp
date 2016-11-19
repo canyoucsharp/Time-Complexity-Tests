@@ -271,3 +271,61 @@ void Sorting::case3()
 }
 
 
+void Sorting::case4()//generate a random array
+{
+	int size = 100;
+	for (int i = 0; i < size; i++)
+		{
+				a100[i] = random(size);
+	}
+
+	/////////////////////////////////////////////////
+
+	size = 200;
+	
+	
+	for (int i = 0; i < size; i++)
+	{
+		a200[i] = random(size);
+	}
+	
+	size = 300;
+	for (int i = 0; i < size; i++)
+	{
+		a300[i] = random(size);
+	}
+	size = 400;
+	for (int i = 0; i < size; i++)
+	{
+		a400[i] = random(size);
+	}
+	
+	size = 500;
+	for (int i = 0; i < size; i++)
+	{
+		a500[i] = random(size);
+	}
+	
+	size = 1000;
+	for (int i = 0; i < size; i++)
+	{
+		a1000[i] = random(size);
+	}
+	
+	size = 2000;
+	for (int i = 0; i < size; i++)
+	{
+		a2000[i] = random(size);
+	}
+	size = 4000;
+	for (int i = 0; i < size; i++)
+	{
+		a4000[i] = random(size);
+	}
+
+	size = 10000;
+	for (int i = 0; i < size; i++)
+	{
+		a10000[i] = random(size);
+	}
+}

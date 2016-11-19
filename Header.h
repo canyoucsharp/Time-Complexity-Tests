@@ -37,6 +37,7 @@ public://keep all main functions public and there subsidiary functions private.
 	void case1();//initalize all the arrays to fit case 1 which is a sorted list of numbers
 	void case2();//initalize all the arrays to fit case 2 which is a sorted list of numbers backwards
 	void case3();//initialize all the arrays to fit case 3 which is a permuted list 
+	void case4();//generate a random list of numbers
 	void test();
  void display(int arr[], int size, ofstream &myfile);
 	
