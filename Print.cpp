@@ -12,12 +12,15 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case,int arr[])
 	Quick Sort =5
 	*/	
 	
+	int *clone = arr;
 	ofstream resultfile;
 	switch (SortIdentifier)
 	{
 	case 1://insertion
-		resultfile.open("Insertion.txt");
-		 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << insertion_sortTime(arr, CurrentSize) << " Number of steps= "<< insertion_sortSTEPS(arr,CurrentSize) << " Case = " << Case << "\n";
+		
+		 resultfile.open("Insertion.txt");
+		 display(arr, CurrentSize, resultfile);
+		 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << insertion_sortTime(arr, CurrentSize) << " Number of steps= "<< insertion_sortSTEPS(clone,CurrentSize) << " Case = " << Case << "\n";
 		break;
 	case 2://selection
 		resultfile.open("example.txt");
@@ -48,8 +51,8 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case,int arr[])
 		}
 
 	}
-	cout << endl;
-	cout << "********************************************************" << endl;
+	resultfile << endl;
+	resultfile << "********************************************************" << endl;
 
 
 }
