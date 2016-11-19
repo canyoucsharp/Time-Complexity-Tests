@@ -20,7 +20,8 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case,int arr[])
 		
 		 resultfile.open("Insertion.txt");
 		 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << insertion_sortTime(arr, CurrentSize) << " Number of steps= "<< insertion_sortSTEPS(clone,CurrentSize) << " Case = " << Case << "\n";
-		 display(arr, CurrentSize, resultfile);
+		
+		 // display(arr, CurrentSize, resultfile);
 		 break;
 	case 2://selection
 		resultfile.open("example.txt");
