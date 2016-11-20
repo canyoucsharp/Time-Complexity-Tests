@@ -8,7 +8,7 @@ high  --> Ending index */
 clock_t start, end_;
 int x, i, temp, j, numofsteps;
 
-void Sorting:: quickSort(int arr[], int low, int high)
+void Sorting:: quickSortTime(int arr[], int low, int high)
 {
 	if (low < high)
 	{
@@ -22,8 +22,8 @@ void Sorting:: quickSort(int arr[], int low, int high)
 
 		// Separately sort elements before
 		// partition and after partition
-		quickSort(arr, low, pi - 1);
-		quickSort(arr, pi + 1, high);
+		quickSortTime(arr, low, pi - 1);
+		quickSortTime(arr, pi + 1, high);
 
 		end_ = clock();
 
@@ -32,7 +32,30 @@ void Sorting:: quickSort(int arr[], int low, int high)
 }
 
 
+void Sorting:: quickSortSteps(int arr[], int low, int high)
+{
 
+	if (low < high)
+	{
+
+		int pi;
+		/* pi is partitioning index, arr[p] is now
+		at right place */
+
+
+		pi = QuickPartitionSteps(arr, low, high);
+
+		// Separately sort elements before
+		// partition and after partition
+		quickSortSteps(arr, low, pi - 1);
+		quickSortSteps(arr, pi + 1, high);
+
+		
+
+		double msecs = ((double)(end_ - start)) * 1000 / CLOCKS_PER_SEC;
+	}
+
+}
 
 int Sorting::QuickPartitionTime(int A[], int p, int r)
 {
