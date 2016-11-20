@@ -12,7 +12,7 @@ void Sorting:: quickSort(int arr[], int low, int high)
 {
 	if (low < high)
 	{
-
+		
 		int pi;
 		/* pi is partitioning index, arr[p] is now
 		at right place */

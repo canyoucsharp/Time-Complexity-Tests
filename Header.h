@@ -15,7 +15,7 @@ using namespace std;
 
 class Sorting
 {
-public://keep all main functions public and there subsidiary functions private.
+public: //keep all main functions public and there subsidiary functions private.
 	Sorting()
 	{
 		a100 = new int[100];
@@ -39,7 +39,7 @@ public://keep all main functions public and there subsidiary functions private.
 	void case1();//initalize all the arrays to fit case 1 which is a sorted list of numbers
 	void case2();//initalize all the arrays to fit case 2 which is a sorted list of numbers backwards
 	void case3();//initialize all the arrays to fit case 3 which is a permuted list 
-	void case4();//generate a random list of numbers
+	void case4();//initialize all the arrays to fit case 4 which is a random list
 	void test();
  void display(int arr[], int size, ofstream &myfile);
 	
@@ -81,7 +81,7 @@ private://use significant names , Partition for quicksort = QuickPartition
 	double Sorting::insertion_sortTime(int arr[], int length);
 	//selection sort stuff
 
-
+	//bubble sort stuff
 
 	
 	
