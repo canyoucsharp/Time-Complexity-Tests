@@ -24,3 +24,11 @@ void Sorting::randomize(int arr[], int n)//shuffles a list of numbers
 
 
 }
+
+int Sorting::random(int n)
+{
+	int currentrandom;
+	currentrandom = rand() % n;
+
+	return currentrandom;
+}
