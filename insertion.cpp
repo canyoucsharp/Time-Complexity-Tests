@@ -1,4 +1,4 @@
-#include "Header.h";
+#include "Header.h"
 
 int Sorting:: insertion_sortSTEPS(int arr[], int length)//mit insertion sort implementation
 {
@@ -27,16 +27,17 @@ int Sorting:: insertion_sortSTEPS(int arr[], int length)//mit insertion sort imp
 	return numofsteps;
 }
 
-float Sorting::insertion_sortTime(int arr[], int length)//returns the amount of time it takes too run the program
+double Sorting::insertion_sortTime(int arr[], int length)//returns the amount of time it takes too run the program
 {
 	
 
 	int j, k;
 	int temp;
 
-	clock_t t1, t2;
+	clock_t start, end;
 
-	t1 = clock();
+	start = clock();
+
 	for (j = 1; j < length; j++)
 	{
 	
@@ -51,13 +52,12 @@ float Sorting::insertion_sortTime(int arr[], int length)//returns the amount of 
 		
 		arr[k + 1] = temp;
 	}
-	t2 = clock();
+	end= clock();
 	
-	float diff((double)t2 - (double)t1);
-	float seconds = diff / CLOCKS_PER_SEC;
+	double msecs = ((double)(end - start)) * 1000 / CLOCKS_PER_SEC;
 
-	return seconds;
-
+	return msecs;
 
 
 }
+
