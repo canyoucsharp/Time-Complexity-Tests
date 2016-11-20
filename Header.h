@@ -9,7 +9,9 @@
 #include <string>
 #include<fstream>
 #include <ostream>
+
 using namespace std;
+
 
 class Sorting
 {
@@ -43,7 +45,7 @@ public://keep all main functions public and there subsidiary functions private.
 	
 	
 
-	void quickSort(int arr[], int low, int high);
+	
 	void CreateArray(int arr[], int size);//user will choose what size array they will make , this function will create that array
 										  //said array will then be used for all functions , all functions will have exact same numbers the idea here is to not declare all arrays
 										  //at once and not waste ridiculous ammounts of memory.
@@ -76,7 +78,7 @@ private://use significant names , Partition for quicksort = QuickPartition
 
 	//insertion sort stuff
 	int insertion_sortSTEPS(int arr[], int length);//returns the number of steps it takes to complete
-	float Sorting::insertion_sortTime(int arr[], int length);
+	double Sorting::insertion_sortTime(int arr[], int length);
 	//selection sort stuff
 
 
@@ -90,9 +92,9 @@ private://use significant names , Partition for quicksort = QuickPartition
 	
 	
 	//QuickSort Stuff
-	void QuickSwap(int* a, int* b);
-	int QuickPartition(int arr[], int low, int high);
-	
+	void quickSort(int arr[], int low, int high);
+	int QuickPartitionTime(int A[], int p, int r);
+	int QuickPartitionSteps(int A[], int p, int r);
 };
 
 #endif

@@ -271,7 +271,7 @@ void Sorting::case3()
 }
 
 
-void Sorting::case4()//generate a random array
+void Sorting::case4()//generates random arrays for each array
 {
 	int size = 100;
 	for (int i = 0; i < size; i++)
