@@ -82,8 +82,11 @@ private://use significant names , Partition for quicksort = QuickPartition
 	//selection sort stuff
 
 	//bubble sort stuff
+	void bubbleTime(int arr[], int n);
+	void bubbleSteps(int arr[], int n);
+	void improved_bubbleTime(int arr[], int n);
+	void improved_bubbleSteps(int arr[], int n);
 
-	
 	
 	//merge sort stuff
 	

@@ -29,19 +29,21 @@ void Sorting::test()
 {
 
 
-	case3();
-	Print(1,100, 3,a100);
-	Print(1, 200, 3, a200);
 	
-	Print(1, 300, 3, a300);
-	Print(1, 400, 3, a400);
-	Print(1, 500, 3, a500);
-	Print(1, 1000, 3, a1000);
-	Print(1, 2000, 3, a2000);
-	Print(1, 4000, 3, a4000);
-	Print(1, 10000, 3, a10000);
+
+		ofstream resultfile;
+		resultfile.open("Insertion.txt");
+		case3();
+		Print(1, 100, 3, a100, resultfile);
+		Print(1, 200, 3, a200, resultfile);
+		Print(1, 300, 3, a300, resultfile);
+		Print(1, 400, 3, a400, resultfile);
+		Print(1, 500, 3, a500, resultfile);
+		Print(1, 1000, 3, a1000, resultfile);
+		Print(1, 2000, 3, a2000, resultfile);
+		Print(1, 4000, 3, a4000, resultfile);
+		Print(1, 10000, 3, a10000, resultfile);
 	
-	cout << "hello";
 
 
 }
