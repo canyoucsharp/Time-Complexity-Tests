@@ -79,7 +79,10 @@ private://use significant names , Partition for quicksort = QuickPartition
 	//insertion sort stuff
 	int insertion_sortSTEPS(int arr[], int length);//returns the number of steps it takes to complete
 	double Sorting::insertion_sortTime(int arr[], int length);
+	
 	//selection sort stuff
+	void selectionSortTime(int arr[], int n);
+	void selectionSortSteps(int arr[], int n);
 
 	//bubble sort stuff
 	void bubbleTime(int arr[], int n);
