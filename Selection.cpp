@@ -4,7 +4,7 @@
 
 
 
-void Sorted ::selectionSortTime(int arr[], int n)
+void Sorting::selectionSortTime(int arr[], int n)
 {
 	int i, j, min_idx, temp;
 	clock_t start, end_;
@@ -29,7 +29,7 @@ void Sorted ::selectionSortTime(int arr[], int n)
 	end_ = clock();
 }
 
-void Sorted:: selectionSortSteps(int arr[], int n)
+void Sorting::selectionSortSteps(int arr[], int n)
 {
 	int i, j, min_idx, temp;
 
