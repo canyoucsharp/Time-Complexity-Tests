@@ -11,7 +11,7 @@ void Sorting::merge(int arr[], int l, int m, int r)
 	int n2 = r - m;
 
 	/* create temp arrays */
-	int L[n1], R[n2];
+	int *L=new int[n1], *R=new int[n2];
 
 	/* Copy data to temp arrays L[] and R[] */
 	for (i = 0; i < n1; i++)

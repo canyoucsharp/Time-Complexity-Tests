@@ -100,6 +100,8 @@ private://use significant names , Partition for quicksort = QuickPartition
 	//merge sort stuff
 	void merge(int arr[], int l, int m, int r);
 	void mergeSort(int arr[], int l, int r);
+	void mergestep(int arr[], int l, int m, int r); //Still need to add these into mergesort.ccp
+	void mergesortsteps(int arr[], int l, int m, int r);//^^^^^^^^^^^^^^^^^^^^^^^^
 	
 	
 	
