@@ -27,11 +27,11 @@ public: //keep all main functions public and there subsidiary functions private.
 		a2000= new int[2000];
 		a4000 = new int[4000];
 		a10000= new int[10000];
-
+		resultfile.open("PUTFILENAMEHERE");
 	}
 	~Sorting()
 	{
-
+		resultfile.close();
 	}
 	
 	
@@ -73,7 +73,11 @@ private://use significant names , Partition for quicksort = QuickPartition
 	int random(int n);
 	void randomize(int arr[], int n);//shuffles a list of numbers
 	void swap(int *a, int *b);//swaps two numbers used for case 3
-	void Print(int SortIdentifier, int CurrentSize, int Case, int arr[],ofstream &resultfile);
+	void Print(int SortIdentifier, int CurrentSize, int Case);
+	int FinCount;
+	int FinTime;
+	ofstream resultfile;
+
 	
 
 	//insertion sort stuff

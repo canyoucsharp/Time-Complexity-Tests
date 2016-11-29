@@ -1,7 +1,7 @@
 #include "Header.h"
 
 
-void Sorting::Print(int SortIdentifier, int CurrentSize,int Case,int arr[], ofstream &resultfile)
+void Sorting::Print(int SortIdentifier, int CurrentSize,int Case)
 {
 	/*
 	Sort Identifiers :
@@ -12,8 +12,6 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case,int arr[], ofst
 	Quick Sort =5
 	*/	
 	
-	int *clone = arr;//clones the array passed in so that we can use the same array for number of steps
-	
 	
 	
 	switch (SortIdentifier)
@@ -21,26 +19,26 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case,int arr[], ofst
 	case 1://insertion
 	
 			
-		 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << insertion_sortTime(arr, CurrentSize) << " Number of steps= "<< insertion_sortSTEPS(clone,CurrentSize) << " Case = " << Case << "\n";
+		 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << FinTime<< " Number of steps= "<< FinCount<< " Case = " << Case << "\n";
 		 
 		 // display(arr, CurrentSize, resultfile);
 		 break;
 	case 2://selection
 		
-		resultfile << "Selection Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << insertion_sortSTEPS(arr, CurrentSize) << " Case = " << Case << "\n";
+		resultfile << "Selection Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
 		break;
 	case 3://bubble
 		
-		resultfile << "Bubble Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << insertion_sortSTEPS(arr, CurrentSize) << " Case = " << Case << "\n";
+		resultfile << "Bubble Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
 		break;
 	case 4://merge
 		
 
-		resultfile << "Merge Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << insertion_sortSTEPS(arr, CurrentSize) << " Case = " << Case << "\n";
+		resultfile << "Merge Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
 		break;
 	case 5://quick
 		
-		resultfile << "Quick Sort with size " << CurrentSize << " Time = " << time << " Number of steps= " << insertion_sortSTEPS(arr, CurrentSize) << " Case = " << Case << "\n";
+		resultfile << "Quick Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
 		break;
 
 
