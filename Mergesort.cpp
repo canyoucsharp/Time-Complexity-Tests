@@ -4,7 +4,7 @@
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
-void Sorted:: mergeSteps(int arr[], int l, int m, int r)
+void Sorting::merge(int arr[], int l, int m, int r)
 {
 	int i, j, k;
 	int n1 = m - l + 1;
@@ -59,7 +59,7 @@ void Sorted:: mergeSteps(int arr[], int l, int m, int r)
 
 /* l is for left index and r is right index of the
    sub-array of arr to be sorted */
-void Sorted:: mergeSortSteps(int arr[], int l, int r)
+void Sorting::mergeSort(int arr[], int l, int r)
 {
 	if (l < r)
 	{
