@@ -27,11 +27,20 @@ public: //keep all main functions public and there subsidiary functions private.
 		a2000= new int[2000];
 		a4000 = new int[4000];
 		a10000= new int[10000];
-		resultfile.open("PUTFILENAMEHERE");
+
+		InsertionFile.open("Insert.csv");
+		SelectionFile.open("PUTFILENAMEHERE");
+		BubbleFile.open("PUTFILENAMEHERE");
+		MergeFile.open("PUTFILENAMEHERE");
+		QuickFile.open("PUTFILENAMEHERE");
 	}
 	~Sorting()
 	{
-		resultfile.close();
+		InsertionFile.close();
+		SelectionFile.close();
+		BubbleFile.close();
+		MergeFile.close();
+		QuickFile.close();
 	}
 	
 	
@@ -77,10 +86,15 @@ private://use significant names , Partition for quicksort = QuickPartition
 	void swap(int *a, int *b);//swaps two numbers used for case 3
 	void Print(int SortIdentifier, int CurrentSize, int Case);
 	int FinCount;
-	int FinTime;
-	ofstream resultfile;
+	double FinTime;
 
-	
+
+	//printing
+	ofstream InsertionFile;
+	ofstream SelectionFile;
+	ofstream BubbleFile;
+	ofstream MergeFile;
+	ofstream QuickFile;
 
 	//insertion sort stuff
 	int insertion_sortSTEPS(int arr[], int length);//returns the number of steps it takes to complete
@@ -100,8 +114,8 @@ private://use significant names , Partition for quicksort = QuickPartition
 	//merge sort stuff
 	void merge(int arr[], int l, int m, int r);
 	void mergeSort(int arr[], int l, int r);
-	void mergestep(int arr[], int l, int m, int r); //Still need to add these into mergesort.ccp
-	void mergesortsteps(int arr[], int l, int m, int r);//^^^^^^^^^^^^^^^^^^^^^^^^
+	void merge1(int arr[], int l, int m, int r); //Still need to add these into mergesort.ccp
+	void mergesort2(int arr[], int l, int r);//^^^^^^^^^^^^^^^^^^^^^^^^
 	
 	
 	

@@ -28,22 +28,21 @@ void Sorting::display(int arr[],int size,ofstream &myfile)
 void Sorting::test()
 {
 
+	/*
+	Sort Identifiers :
+	Insertion Sort = 1
+	Selection Sort =2
+	Bubble Sort =3
+	Merge Sort =4
+	Quick Sort =5
+	*/
 
-	
+	int cs = 1;
+	case1();
+	FinCount=insertion_sortSTEPS(a100,100);
+	FinTime=insertion_sortTime(a100, 100);
+	Print(1, 100, cs);
 
-		ofstream resultfile;
-		resultfile.open("Insertion.txt");
-		case3();
-		Print(1, 100, 3, a100, resultfile);
-		Print(1, 200, 3, a200, resultfile);
-		Print(1, 300, 3, a300, resultfile);
-		Print(1, 400, 3, a400, resultfile);
-		Print(1, 500, 3, a500, resultfile);
-		Print(1, 1000, 3, a1000, resultfile);
-		Print(1, 2000, 3, a2000, resultfile);
-		Print(1, 4000, 3, a4000, resultfile);
-		Print(1, 10000, 3, a10000, resultfile);
-	
-
-
+	cout << "Time = " << FinTime << endl;
+	cout << "Steps = " << FinCount << endl;
 }

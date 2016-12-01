@@ -17,28 +17,28 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case)
 	switch (SortIdentifier)
 	{
 	case 1://insertion
-	
-			
-		 resultfile  << "Insertion Sort with size " << CurrentSize << " Time = " << FinTime<< " Number of steps= "<< FinCount<< " Case = " << Case << "\n";
+		//myfile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
+			//case,size,steps,time,\n
+		 InsertionFile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
 		 
 		 // display(arr, CurrentSize, resultfile);
 		 break;
 	case 2://selection
 		
-		resultfile << "Selection Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
+		SelectionFile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
 		break;
 	case 3://bubble
 		
-		resultfile << "Bubble Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
+		BubbleFile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
 		break;
 	case 4://merge
 		
 
-		resultfile << "Merge Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
+		MergeFile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
 		break;
 	case 5://quick
 		
-		resultfile << "Quick Sort with size " << CurrentSize << " Time = " << FinTime << " Number of steps= " << FinCount << " Case = " << Case << "\n";
+		QuickFile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
 		break;
 
 
