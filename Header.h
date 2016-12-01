@@ -54,9 +54,7 @@ public: //keep all main functions public and there subsidiary functions private.
 	
 	
 
-	/*This is a weird fucntion call, it doesn't need to have different sizes becuase you'll end up creating mutliple array with different sizes.
-	MAKING IT INEFFECIENT FFS
-	-Dennis*/
+	
 	void CreateArray(int arr[], int size);//user will choose what size array they will make , this function will create that array
 										  //said array will then be used for all functions , all functions will have exact same numbers the idea here is to not declare all arrays
 										  //at once and not waste ridiculous ammounts of memory.
