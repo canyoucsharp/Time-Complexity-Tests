@@ -33,6 +33,13 @@ public: //keep all main functions public and there subsidiary functions private.
 		BubbleFile.open("PUTFILENAMEHERE");
 		MergeFile.open("PUTFILENAMEHERE");
 		QuickFile.open("PUTFILENAMEHERE");
+
+
+		bool Ins=false;
+		bool Sel = false;
+		bool Bub = false;
+		bool Mer = false;
+		bool Quic = false;
 	}
 	~Sorting()
 	{
@@ -93,6 +100,12 @@ private://use significant names , Partition for quicksort = QuickPartition
 	ofstream BubbleFile;
 	ofstream MergeFile;
 	ofstream QuickFile;
+	void PHead(int SortIdentifier);
+	bool Ins;
+	bool Sel;
+	bool Bub;
+	bool Mer;
+	bool Quic;
 
 	//insertion sort stuff
 	int insertion_sortSTEPS(int arr[], int length);//returns the number of steps it takes to complete
