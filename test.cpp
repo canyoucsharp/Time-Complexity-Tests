@@ -69,5 +69,34 @@ void Sorting::test()
 	FinTime = insertion_sortTime(a10000, 10000);
 	Print(1, 10000, cs);
 
+	//Selection Sort Case 1
+	FinCount = selectionSortSteps(a100, 100);
+	FinTime = selectionSortTime(a100, 100);
+	Print(2, 100, cs);
+	FinCount = selectionSortSteps(a200, 200);
+	FinTime = selectionSortTime(a200, 200);
+	Print(2, 200, cs);
+	FinCount = selectionSortSteps(a300, 300);
+	FinTime = selectionSortTime(a300, 300);
+	Print(2, 300, cs);
+	FinCount = selectionSortSteps(a400, 400);
+	FinTime = selectionSortTime(a400, 400);
+	Print(2, 400, cs);
+	FinCount = selectionSortSteps(a500, 500);
+	FinTime = selectionSortTime(a500, 500);
+	Print(2, 500, cs);
+	FinCount = selectionSortSteps(a1000, 1000);
+	FinTime = selectionSortTime(a1000, 1000);
+	Print(2, 1000, cs);
+	FinCount = selectionSortSteps(a2000, 2000);
+	FinTime = selectionSortTime(a2000, 2000);
+	Print(2, 2000, cs);
+	FinCount = selectionSortSteps(a4000, 4000);
+	FinTime = selectionSortTime(a4000, 4000);
+	Print(2, 4000, cs);
+	FinCount = selectionSortSteps(a10000, 10000);
+	FinTime = selectionSortTime(a10000, 10000);
+	Print(2, 10000, cs);
+
 
 }

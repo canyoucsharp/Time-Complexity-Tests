@@ -1,13 +1,14 @@
-#include "Header.h";
+#include "Header.h"
 
 
 
 
 
-void Sorting::selectionSortTime(int arr[], int n)
+double Sorting::selectionSortTime(int arr[], int n)
 {
+	int * hold = arr;
 	int i, j, min_idx, temp;
-	clock_t start, end_;
+	clock_t start, end;
 	start = clock();
 	// One by one move boundary of unsorted subarray
 	for (i = 0; i < n - 1; i++)
@@ -15,22 +16,28 @@ void Sorting::selectionSortTime(int arr[], int n)
 		// Find the minimum element in unsorted array
 		min_idx = i;
 		for (j = i + 1; j < n; j++)
-			if (arr[j] < arr[min_idx])
+			if (hold[j] < hold[min_idx])
 				min_idx = j;
 
 		// Swap the found minimum element with the first element
-		temp = arr[min_idx];
-		arr[min_idx] = arr[i];
-		arr[i] = temp;
+		temp = hold[min_idx];
+		hold[min_idx] = hold[i];
+		hold[i] = temp;
 
 		
 
 	}
-	end_ = clock();
+	end = clock();
+
+	double msecs = ((double)(end - start)) * 1000 / CLOCKS_PER_SEC;
+
+	return msecs;
+
 }
 
-void Sorting::selectionSortSteps(int arr[], int n)
+int Sorting::selectionSortSteps(int arr[], int n)
 {
+	int * hold = arr;
 	int i, j, min_idx, temp;
 
 	// One by one move boundary of unsorted subarray
@@ -39,16 +46,16 @@ void Sorting::selectionSortSteps(int arr[], int n)
 		// Find the minimum element in unsorted array
 		min_idx = i;
 		for (j = i + 1; j < n; j++)
-			if (arr[j] < arr[min_idx])
+			if (hold[j] < hold[min_idx])
 				min_idx = j;
 
 		// Swap the found minimum element with the first element
-		temp = arr[min_idx];
-		arr[min_idx] = arr[i];
-		arr[i] = temp;
+		temp = hold[min_idx];
+		hold[min_idx] = hold[i];
+		hold[i] = temp;
 
 	}
 
 
-
+	return 0; 
 }
