@@ -29,12 +29,15 @@ double Sorting::insertion_sortTime(int arr[], int length)//returns the amount of
 {
 	
 	int * hold = arr;
-	int j, k;
-	int temp;
+	
 
 	clock_t start, end;
 
+
 	start = clock();
+	
+	int j, k;
+	int temp;
 
 	for (j = 1; j < length; j++)
 	{

@@ -7,9 +7,10 @@
 double Sorting::selectionSortTime(int arr[], int n)
 {
 	int * hold = arr;
-	int i, j, min_idx, temp;
+	
 	clock_t start, end;
 	start = clock();
+	int i, j, min_idx, temp;
 	// One by one move boundary of unsorted subarray
 	for (i = 0; i < n - 1; i++)
 	{
