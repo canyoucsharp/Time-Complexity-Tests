@@ -106,11 +106,13 @@ void Sorting::merge1(int arr[], int l, int m, int r)//steps
 		L[i] = arr[l + i];
 		FinCount += 2;
 	}
+	FinCount++;
 	for (j = 0; j < n2; j++)
 	{
 		R[j] = arr[m + 1 + j];
 		FinCount += 2;
 	}
+	FinCount++;
 
 	/* Merge the temp arrays back into arr[l..r]*/
 	i = 0; // Initial index of first subarray
@@ -133,7 +135,7 @@ void Sorting::merge1(int arr[], int l, int m, int r)//steps
 			FinCount += 2;
 		}
 		k++;
-		FinCount++;
+		FinCount += 3;
 	}
 
 	/* Copy the remaining elements of L[], if there
@@ -155,6 +157,7 @@ void Sorting::merge1(int arr[], int l, int m, int r)//steps
 		k++;
 		FinCount += 4;
 	}
+	FinCount++;
 }
 
 void Sorting::mergesort2(int arr[], int l, int r)//steps
@@ -174,4 +177,5 @@ void Sorting::mergesort2(int arr[], int l, int r)//steps
 		merge1(arr, l, m, r);
 		FinCount++;
 	}
+	FinCount++;
 }
