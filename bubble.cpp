@@ -4,10 +4,11 @@
 double Sorting::bubbleTime(int arr[], int n)
 {
 	clock_t start, end;
-	int i, j, temp;
+	
 	int * hold = arr;
 		
 	start = clock();
+	int i, j, temp;
 		for (i = 0; i < n - 1; i++)
 
 			// Last i elements are already in place   
