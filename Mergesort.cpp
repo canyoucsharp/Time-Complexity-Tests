@@ -4,7 +4,7 @@
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
-void Sorting::merge(int arr[], int l, int m, int r)
+void Sorting::merge(int arr[], int l, int m, int r)//steps
 {
 	int i, j, k;
 	int n1 = m - l + 1;
@@ -59,7 +59,7 @@ void Sorting::merge(int arr[], int l, int m, int r)
 
 /* l is for left index and r is right index of the
    sub-array of arr to be sorted */
-void Sorting::mergeSort(int arr[], int l, int r)
+void Sorting::mergeSort(int arr[], int l, int r)//steps
 {
 	if (l < r)
 	{
@@ -75,12 +75,29 @@ void Sorting::mergeSort(int arr[], int l, int r)
 	}
 }
 
-void Sorting::merge1(int arr[], int l, int m, int r)
+
+
+double Sorting::mergeSortcall(int arr[], int l, int r)
+{
+	int * hold = arr;
+	clock_t start, end;
+
+	start = clock();
+	mergeSort( hold, l, r);
+	
+	end = clock();
+	
+	double msecs = ((double)(end - start)) * 1000 / CLOCKS_PER_SEC;
+	return msecs;
+
+}
+void Sorting::merge1(int arr[], int l, int m, int r)//steps
 {
 	int i, j, k, n1 = m - l + 1, n2 = r - m;
 
 	/* create temp arrays */
 	int *L = new int[n1], *R = new int[n2];
+	
 	FinCount++;
 
 	/* Copy data to temp arrays L[] and R[] */
@@ -140,7 +157,7 @@ void Sorting::merge1(int arr[], int l, int m, int r)
 	}
 }
 
-void Sorting::mergesort2(int arr[], int l, int r)
+void Sorting::mergesort2(int arr[], int l, int r)//steps
 {
 	if (l < r)
 	{
