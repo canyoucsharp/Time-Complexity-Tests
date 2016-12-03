@@ -87,12 +87,12 @@ void Sorting::quickSortSteps(int arr[], int low, int high)
 	/* recursion */
 	if (left < j)
 	{
-		quickSort(arr, left, j);
+		quickSortSteps(arr, left, j);
 		FinCount += 2;
 	}
 	if (i < right)
 	{
-		quickSort(arr, i, right);
+		quickSortSteps(arr, i, right);
 		FinCount += 2;
 	}
 	FinCount += 2;
