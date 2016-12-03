@@ -30,10 +30,10 @@ public: //keep all main functions public and there subsidiary functions private.
 
 		InsertionFile.open("Insert.csv");
 		SelectionFile.open("Select.csv");
-		BubbleFile.open("PUTFILENAMEHERE");
-		BubbleImpFile.open("PUTFILENAMEHERE");
-		MergeFile.open("PUTFILENAMEHERE");
-		QuickFile.open("PUTFILENAMEHERE");
+		BubbleFile.open("Bubble.csv");
+		BubbleImpFile.open("Bubbleimp.csv");
+		MergeFile.open("Merge.csv");
+		QuickFile.open("Quick.csv");
 
 
 		Ins=false;

@@ -16,18 +16,13 @@ void Sorting::quickSortTime(int arr[], int low, int high)
 		int pi;
 		/* pi is partitioning index, arr[p] is now
 		at right place */
-		
-		start = clock();
+
 		pi = QuickPartitionTime(arr, low, high);
 
 		// Separately sort elements before
 		// partition and after partition
 		quickSortTime(arr, low, pi - 1);
 		quickSortTime(arr, pi + 1, high);
-
-		end_ = clock();
-
-		double msecs = ((double)(end_ - start)) * 1000 / CLOCKS_PER_SEC;
 	}
 }
 
