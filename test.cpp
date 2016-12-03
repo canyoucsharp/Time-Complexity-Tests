@@ -652,7 +652,7 @@ void Sorting::test()
 
 	cs = 4;
 	int count = 0;
-	double Timeinsert[9]{ 0 }, StepInsert[9]{ 0 }, TimeSelection[9]{ 0 }, StepSelection[9]{ 0 }, TimeBubble, StepBubble, TimeMerge, StepMerge, TimeQuick, StepQuick, TimeBI, StepBI;
+	double Timeinsert[9]{ 0 }, StepInsert[9]{ 0 }, TimeSelection[9]{ 0 }, StepSelection[9]{ 0 }, TimeBubble[9]{ 0 }, StepBubble[9]{ 0 }, TimeMerge[9]{ 0 }, StepMerge[9]{ 0 }, TimeQuick[9]{ 0 }, StepQuick[9]{ 0 }, TimeBI[9]{ 0 }, StepBI[9]{ 0 };
 	while (count < 50)
 	{
 		case4();
@@ -676,58 +676,199 @@ void Sorting::test()
 		StepInsert[8] += insertion_sortSTEPS(a10000, 10000);
 		Timeinsert[8] += insertion_sortTime(a10000, 10000);
 
-		FinTime = 0;
-		FinCount = 0;
-		/*
-		FinCount = selectionSortSteps(a100, 100);
-		FinTime = selectionSortTime(a100, 100);
-		Print(2, 100, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a200, 200);
-		FinTime = selectionSortTime(a200, 200);
-		Print(2, 200, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a300, 300);
-		FinTime = selectionSortTime(a300, 300);
-		Print(2, 300, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a400, 400);
-		FinTime = selectionSortTime(a400, 400);
-		Print(2, 400, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a500, 500);
-		FinTime = selectionSortTime(a500, 500);
-		Print(2, 500, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a1000, 1000);
-		FinTime = selectionSortTime(a1000, 1000);
-		Print(2, 1000, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a2000, 2000);
-		FinTime = selectionSortTime(a2000, 2000);
-		Print(2, 2000, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a4000, 4000);
-		FinTime = selectionSortTime(a4000, 4000);
-		Print(2, 4000, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
-		FinCount = selectionSortSteps(a10000, 10000);
-		FinTime = selectionSortTime(a10000, 10000);
-		Print(2, 10000, cs);
-		StepSelection += FinCount;
-		TimeSelection += FinTime;
 
-		*/
+		StepSelection[0] += selectionSortSteps(a100, 100);
+		TimeSelection[0] += selectionSortTime(a100, 100);
+		StepSelection[1] = selectionSortSteps(a200, 200);
+		TimeSelection[1] = selectionSortTime(a200, 200);
+		StepSelection[2] = selectionSortSteps(a300, 300);
+		TimeSelection[2] = selectionSortTime(a300, 300);
+		StepSelection[3] = selectionSortSteps(a400, 400);
+		TimeSelection[3] = selectionSortTime(a400, 400);
+		StepSelection[4] = selectionSortSteps(a500, 500);
+		TimeSelection[4] = selectionSortTime(a500, 500);
+		StepSelection[5] = selectionSortSteps(a1000, 1000);
+		TimeSelection[5] = selectionSortTime(a1000, 1000);
+		StepSelection[6] = selectionSortSteps(a2000, 2000);
+		TimeSelection[6] = selectionSortTime(a2000, 2000);
+		StepSelection[7] = selectionSortSteps(a4000, 4000);
+		TimeSelection[7] = selectionSortTime(a4000, 4000);
+		StepSelection[8] = selectionSortSteps(a10000, 10000);
+		TimeSelection[8] = selectionSortTime(a10000, 10000);
+
+		StepBubble[0] += bubbleSteps(a100, 100);
+		TimeBubble[0] += bubbleTime(a100, 100);
+		StepBubble[1] += bubbleSteps(a200, 200);
+		TimeBubble[1] += bubbleTime(a200, 200);
+		StepBubble[2] += bubbleSteps(a300, 300);
+		TimeBubble[2] += bubbleTime(a300, 300);
+		StepBubble[3] += bubbleSteps(a400, 400);
+		TimeBubble[3] += bubbleTime(a400, 400);
+		StepBubble[4] += bubbleSteps(a500, 500);
+		TimeBubble[4] += bubbleTime(a500, 500);
+		StepBubble[5] += bubbleSteps(a1000, 1000);
+		TimeBubble[5] += bubbleTime(a1000, 1000);
+		StepBubble[6] += bubbleSteps(a2000, 2000);
+		TimeBubble[6] += bubbleTime(a2000, 2000);
+		StepBubble[7] += bubbleSteps(a4000, 4000);
+		TimeBubble[7] += bubbleTime(a4000, 4000);
+		StepBubble[8] += bubbleSteps(a10000, 10000);
+		TimeBubble[8] += bubbleTime(a10000, 10000);
+
+
+		mergesort2(a100, 0, 100 - 1);
+		StepMerge[0] += FinCount;
+		TimeMerge[0] += mergeSortcall(a100, 0, 100 - 1);
+		FinCount = 0; 
+		mergesort2(a200, 0, 200 - 1);
+		StepMerge[1] += FinCount;
+		TimeMerge[1] += mergeSortcall(a200, 0, 200 - 1);
+		FinCount = 0;
+		mergesort2(a300, 0, 300 - 1);
+		StepMerge[2] += FinCount;
+		TimeMerge[2] += mergeSortcall(a300, 0, 300 - 1);
+		FinCount = 0;
+		mergesort2(a400, 0, 400 - 1);
+		StepMerge[3] += FinCount;
+		TimeMerge[3] += mergeSortcall(a400, 0, 400 - 1);
+		FinCount = 0;
+		mergesort2(a500, 0, 500 - 1);
+		StepMerge[4] += FinCount;
+		TimeMerge[4] += mergeSortcall(a500, 0, 500 - 1);
+		FinCount = 0;
+		mergesort2(a1000, 0, 1000 - 1);
+		StepMerge[5] += FinCount;
+		TimeMerge[5] += mergeSortcall(a1000, 0, 1000 - 1);
+		FinCount = 0;
+		mergesort2(a2000, 0, 2000 - 1);
+		StepMerge[6] += FinCount;
+		TimeMerge[6] += mergeSortcall(a2000, 0, 2000 - 1);
+		FinCount = 0;
+		mergesort2(a4000, 0, 4000 - 1);
+		StepMerge[7] += FinCount;
+		TimeMerge[7] += mergeSortcall(a4000, 0, 4000 - 1);
+		FinCount = 0;
+		mergesort2(a10000, 0, 10000 - 1);
+		StepMerge[8] += FinCount;
+		TimeMerge[8] += mergeSortcall(a10000, 0, 10000 - 1);
+		FinCount = 0;
+
+		quickSortSteps(a100, 0, 100 - 1);
+		StepQuick[0] += FinCount;
+		TimeQuick[0] += quickSortTimecall(a100, 0, 100 - 1);
+		FinCount = 0;
+		quickSortSteps(a200, 0, 200 - 1);
+		StepQuick[1] += FinCount;
+		TimeQuick[1] += quickSortTimecall(a200, 0, 200 - 1);
+		FinCount = 0;
+		quickSortSteps(a300, 0, 300 - 1);
+		StepQuick[2] += FinCount;
+		TimeQuick[2] += quickSortTimecall(a300, 0, 300 - 1);
+		FinCount = 0;
+		quickSortSteps(a400, 0, 400 - 1);
+		StepQuick[3] += FinCount;
+		TimeQuick[3] += quickSortTimecall(a400, 0, 400 - 1);
+		FinCount = 0;
+		quickSortSteps(a500, 0, 500 - 1);
+		StepQuick[4] += FinCount;
+		TimeQuick[4] += quickSortTimecall(a500, 0, 500 - 1);
+		FinCount = 0;
+		quickSortSteps(a1000, 0, 1000 - 1);
+		StepQuick[5] += FinCount;
+		TimeQuick[5] += quickSortTimecall(a1000, 0, 1000 - 1);
+		FinCount = 0;
+		quickSortSteps(a2000, 0, 2000 - 1);
+		StepQuick[6] += FinCount;
+		TimeQuick[6] += quickSortTimecall(a2000, 0, 2000 - 1);
+		FinCount = 0;
+		quickSortSteps(a4000, 0, 4000 - 1);
+		StepQuick[7] += FinCount;
+		TimeQuick[7] += quickSortTimecall(a4000, 0, 4000 - 1);
+		FinCount = 0;
+		quickSortSteps(a10000, 0, 10000 - 1);
+		StepQuick[8] += FinCount;
+		TimeQuick[8] += quickSortTimecall(a10000, 0, 10000 - 1);
+		FinCount = 0;
+
+		StepBI[0] += improved_bubbleSteps(a100, 100);
+		TimeBI[0] += improved_bubbleTime(a100, 100);
+		StepBI[1] += improved_bubbleSteps(a200, 200);
+		TimeBI[1] += improved_bubbleTime(a200, 200);
+		StepBI[2] += improved_bubbleSteps(a300, 300);
+		TimeBI[2] += improved_bubbleTime(a300, 300);
+		StepBI[3] += improved_bubbleSteps(a400, 400);
+		TimeBI[3] += improved_bubbleTime(a400, 400);
+		StepBI[4] += improved_bubbleSteps(a500, 500);
+		TimeBI[4] += improved_bubbleTime(a500, 500);
+		StepBI[5] += improved_bubbleSteps(a1000, 1000);
+		TimeBI[5] += improved_bubbleTime(a1000, 1000);
+		StepBI[6] += improved_bubbleSteps(a2000, 2000);
+		TimeBI[6] += improved_bubbleTime(a2000, 2000);
+		StepBI[7] += improved_bubbleSteps(a4000, 4000);
+		TimeBI[7] += improved_bubbleTime(a4000, 4000);
+		StepBI[8] += improved_bubbleSteps(a10000, 10000);
+		TimeBI[8] += improved_bubbleTime(a10000, 10000);
+
 		count++;
 	}
+
+	int place[9]{ 100,200,300,400,500,1000,2000,4000,10000 };
+	LastCase << "Sort,Size,AVG STEPS ,AVG TIMES ,\n";
+	for (int x = 0; x < 9; x++)
+	{
+		double avgtime,avgstep;
+		avgtime = Timeinsert[x];
+		avgtime = avgtime / count;
+		avgstep = StepInsert[x];
+		avgstep = avgstep / count;
+		LastCase << "Insertion Sort" << "," << place[x] << "," << avgstep << "," << avgtime << ",\n";
+	}
+	for (int x = 0; x < 9; x++)
+	{
+		double avgtime, avgstep;
+		avgtime = TimeSelection[x];
+		avgtime = avgtime / count;
+		avgstep = StepSelection[x];
+		avgstep = avgstep / count;
+		LastCase << "Selection Sort" << "," << place[x] << "," << avgstep << "," << avgtime << ",\n";
+	}
+	for (int x = 0; x < 9; x++)
+	{
+		double avgtime, avgstep;
+		avgtime = TimeBubble[x];
+		avgtime = avgtime / count;
+		avgstep = StepBubble[x];
+		avgstep = avgstep / count;
+		LastCase << "Bubble Sort" << "," << place[x] << "," << avgstep << "," << avgtime << ",\n";
+	}
+	for (int x = 0; x < 9; x++)
+	{
+		double avgtime, avgstep;
+		avgtime = TimeMerge[x];
+		avgtime = avgtime / count;
+		avgstep = StepMerge[x];
+		avgstep = avgstep / count;
+		LastCase << "Merge Sort" << "," << place[x] << "," << avgstep << "," << avgtime << ",\n";
+	}
+	for (int x = 0; x < 9; x++)
+	{
+		double avgtime, avgstep;
+		avgtime = TimeQuick[x];
+		avgtime = avgtime / count;
+		avgstep = StepQuick[x];
+		avgstep = avgstep / count;
+		LastCase << "Quick Sort" << "," << place[x] << "," << avgstep << "," << avgtime << ",\n";
+	}
+	
+	for (int x = 0; x < 9; x++)
+		{
+			double avgtime, avgstep;
+			avgtime = TimeBI[x];
+			avgtime = avgtime / count;
+			avgstep = StepBI[x];
+			avgstep = avgstep / count;
+			LastCase << "Improved Bubble Sort" << "," << place[x] << "," << avgstep << "," << avgtime << ",\n";
+		}
 	
 	cout << "finished";
 }

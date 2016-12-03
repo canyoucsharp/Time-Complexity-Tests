@@ -34,6 +34,8 @@ public: //keep all main functions public and there subsidiary functions private.
 		BubbleImpFile.open("Bubbleimp.csv");
 		MergeFile.open("Merge.csv");
 		QuickFile.open("Quick.csv");
+		LastCase.open("LastCase.csv");
+
 
 
 		Ins=false;
@@ -51,6 +53,7 @@ public: //keep all main functions public and there subsidiary functions private.
 		MergeFile.close();
 		QuickFile.close();
 		BubbleImpFile.close();
+		LastCase.close();
 	}
 	
 	
@@ -96,6 +99,7 @@ private://use significant names , Partition for quicksort = QuickPartition
 	ofstream BubbleImpFile;
 	ofstream MergeFile;
 	ofstream QuickFile;
+	ofstream LastCase;
 	void PHead(int SortIdentifier);
 	bool Ins;
 	bool Sel;
