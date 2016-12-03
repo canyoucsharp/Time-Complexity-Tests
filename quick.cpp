@@ -10,25 +10,30 @@ int x, i, temp, j, numofsteps=0;
 
 void Sorting::quickSortTime(int arr[], int low, int high)
 {
-	if (low < high)
-	{
-		
-		int pi;
-		/* pi is partitioning index, arr[p] is now
-		at right place */
-		
-		start = clock();
-		pi = QuickPartitionTime(arr, low, high);
+	int i = left, j = right;
+	int tmp;
+	int pivot = arr[(left + right) / 2];
 
-		// Separately sort elements before
-		// partition and after partition
-		quickSortTime(arr, low, pi - 1);
-		quickSortTime(arr, pi + 1, high);
+	/* partition */
+	while (i <= j) {
+		while (arr[i] < pivot)
+			i++;
+		while (arr[j] > pivot)
+			j--;
+		if (i <= j) {
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+		}
+	};
 
-		end_ = clock();
-
-		double msecs = ((double)(end_ - start)) * 1000 / CLOCKS_PER_SEC;
-	}
+	/* recursion */
+	if (left < j)
+		quickSortTime(arr, left, j);
+	if (i < right)
+		quickSortTime(arr, i, right);
 }
 
 double Sorting::quickSortTimecall(int arr[], int low, int high)
@@ -46,22 +51,50 @@ double Sorting::quickSortTimecall(int arr[], int low, int high)
 void Sorting::quickSortSteps(int arr[], int low, int high)
 {
 
-	if (low < high)
-	{
-		int pi;
-		/* pi is partitioning index, arr[p] is now
-		at right place */
-		numofsteps++;
+	int i = left, j = right;
+	int tmp;
+	int pivot = arr[(left + right) / 2];
 
-		pi = QuickPartitionSteps(arr, low, high);
-		numofsteps++;
-		// Separately sort elements before
-		// partition and after partition
-		quickSortSteps(arr, low, pi - 1);
-		numofsteps++;
-		quickSortSteps(arr, pi + 1, high);
-		numofsteps++;
+	FinCount++;
+	/* partition */
+	while (i <= j)
+	{
+		FinCount++;
+		while (arr[i] < pivot)
+		{
+			i++;
+			FinCount++;
+		}
+		FinCount++;
+		while (arr[j] > pivot)
+		{
+			j--
+			FinCount++;
+		}
+		FinCount++;
+		if (i <= j) 
+		{
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+			FinCount += 6;
+		}
+		FinCount++;
+	};
+
+	/* recursion */
+	if (left < j)
+	{
+		quickSort(arr, left, j);
+		FinCount++;
 	}
+	if (i < right)
+	{
+		quickSort(arr, i, right);
+	}
+	FinCount += 2;
 
 }
 
