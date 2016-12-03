@@ -1,83 +1,113 @@
 #include "Header.h"
 
 
-void Sorting::bubbleTime(int arr[], int n)
+double Sorting::bubbleTime(int arr[], int n)
 {
 	clock_t start, end;
 	int i, j, temp;
+	int * hold = arr;
 		
 	start = clock();
 		for (i = 0; i < n - 1; i++)
 
 			// Last i elements are already in place   
 			for (j = 0; j < n - i - 1; j++)
-				if (arr[j] > arr[j + 1])
+				if (hold[j] > hold[j + 1])
 				{
-					temp = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = temp;
+					temp = hold[j];
+					hold[j] = hold[j + 1];
+					hold[j + 1] = temp;
 
 				}
 		end = clock();
 		double msecs = ((double)(end - start)) * 1000 / CLOCKS_PER_SEC;
 					
+		return msecs;
 
 	}
 
-void Sorting::bubbleSteps(int arr[], int n)
+int Sorting::bubbleSteps(int arr[], int n)
 {
-	int i, j, temp;
+	int * hold = arr;
+	int i, j, temp, numofsteps = 0;
 
+	numofsteps++; //initialize
 	for (i = 0; i < n - 1; i++)
-
+	{
+		numofsteps+=2;//i++, i<n-1
 		// Last i elements are already in place   
 		for (j = 0; j < n - i - 1; j++)
-			if (arr[j] > arr[j + 1])
+		{
+			numofsteps+=2;//i<n-j, i++
+			if (hold[j] > hold[j + 1])
 			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+				temp = hold[j];
+				hold[j] = hold[j + 1];
+				hold[j + 1] = temp;
+				numofsteps+= 4; //hold[i]>hold[i+1], tmp = hold[i], hold[i]=hold[i+1], hold[i+1]=tmp
 
 			}
-
-
+			numofsteps++;//hold[i] < hold[i+1]
+		}
+		numofsteps++; //i>n-j
+	}
+	numofsteps++; //swapped == false
+	return numofsteps;
 }
 
 
-void Sorting::improved_bubbleTime(int arr[], int n)
+double Sorting::improved_bubbleTime(int arr[], int n)
 {
+	clock_t start, end;
 	bool swapped = true;
-	int j = 0;
-	int tmp;
+	int j = 0, tmp;
+	int * hold = arr;
+
+	start = clock();
 	while (swapped) {
 		swapped = false;
 		j++;
 		for (int i = 0; i < n - j; i++) {
-			if (arr[i] > arr[i + 1]) {
-				tmp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = tmp;
+			if (hold[i] > hold[i + 1]) {
+				tmp = hold[i];
+				hold[i] = hold[i + 1];
+				hold[i + 1] = tmp;
 				swapped = true;
 			}
 		}
 	}
-
+	end = clock();
+	double msecs = ((double)(end - start)) * 1000 / CLOCKS_PER_SEC;
+	return msecs;
 }
-void Sorting::improved_bubbleSteps(int arr[], int n)
+
+int Sorting::improved_bubbleSteps(int arr[], int n)
 {
 	bool swapped = true;
-	int j = 0;
-	int tmp;
-	while (swapped) {
+	int j = 0, tmp, numofsteps=0;
+	int * hold = arr;
+	numofsteps++;//initialize
+
+	while (swapped)
+	{
 		swapped = false;
 		j++;
-		for (int i = 0; i < n - j; i++) {
-			if (arr[i] > arr[i + 1]) {
-				tmp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = tmp;
+		numofsteps += 3; //(swapped), j++, swapped=false
+		for (int i = 0; i < n - j; i++)
+		{
+			numofsteps += 2;//i<n-j, i++
+			if (hold[i] > hold[i + 1])
+			{
+				tmp = hold[i];
+				hold[i] = hold[i + 1];
+				hold[i + 1] = tmp;
 				swapped = true;
+				numofsteps += 5; //hold[i]>hold[i+1], tmp = hold[i], hold[i]=hold[i+1], hold[i+1]=tmp, swapped=true
 			}
+			numofsteps++;//hold[i] < hold[i+1]
 		}
+		numofsteps++; //i>n-j
 	}
+	numofsteps++; //swapped == false
+	return numofsteps;
 }

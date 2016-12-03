@@ -3,15 +3,12 @@
 int Sorting:: insertion_sortSTEPS(int arr[], int length)//mit insertion sort implementation
 {
 	int * hold = arr;
-	int numofsteps=0;
-	
-    int j, k;
-	int temp;
+	int numofsteps=0, j, k, temp;
 
 	numofsteps++;  //j=1
 	for (j = 1; j < length; j++)
 	{
-		numofsteps = numofsteps + 4;//j < length; j++; temp = arr[j]; k = j - 1;
+		numofsteps = numofsteps + 4;//j < length; j++; temp = hold[j]; k = j - 1;
 		temp = hold[j];
 		k = j - 1;
 		while (k >= 0 && hold[k] > temp)

@@ -6,9 +6,9 @@ low  --> Starting index,
 high  --> Ending index */
 
 clock_t start, end_;
-int x, i, temp, j, numofsteps;
+int x, i, temp, j, numofsteps=0;
 
-void Sorting:: quickSortTime(int arr[], int low, int high)
+void Sorting::quickSortTime(int arr[], int low, int high)
 {
 	if (low < high)
 	{
@@ -31,66 +31,57 @@ void Sorting:: quickSortTime(int arr[], int low, int high)
 	}
 }
 
+double Sorting::quickSortTimecall(int arr[], int low, int high)
+{
+	int * hold = arr;
+	start = clock();
+	quickSortTime(hold, low, high);
+	end_ = clock();
+	double msecs = ((double)(end_ - start)) * 1000 / CLOCKS_PER_SEC;
+	return msecs;
+}
 
-void Sorting:: quickSortSteps(int arr[], int low, int high)
+
+
+void Sorting::quickSortSteps(int arr[], int low, int high)
 {
 
 	if (low < high)
 	{
-
 		int pi;
 		/* pi is partitioning index, arr[p] is now
 		at right place */
-
+		numofsteps++;
 
 		pi = QuickPartitionSteps(arr, low, high);
-
+		numofsteps++;
 		// Separately sort elements before
 		// partition and after partition
 		quickSortSteps(arr, low, pi - 1);
+		numofsteps++;
 		quickSortSteps(arr, pi + 1, high);
-
-		
-
-		double msecs = ((double)(end_ - start)) * 1000 / CLOCKS_PER_SEC;
+		numofsteps++;
 	}
 
 }
 
 int Sorting::QuickPartitionTime(int A[], int p, int r)
 {
-	
-	
-	
-	
-	
-	
-	
 	x = A[r];// pivot
 	i = p - 1; // Index of smaller element
 
-	   
 	
-	
-
 	for ( j =p; j <=r - 1; j++)
 	{
-		
 		// If current element is smaller than or
 		// equal to pivot
-	
-	
 		if (A[j] <= x)
 		{
-		
-			
 			i++;    // increment index of smaller element
-			
 					//exchange A[i] with A[] 
 			temp = A[i];
 			A[i] = A[j];
 			A[j] = temp;
-
 		}
 	}
 	
@@ -101,59 +92,46 @@ int Sorting::QuickPartitionTime(int A[], int p, int r)
 	A[i + 1] = A[r];
 	A[r] = temp;
 	return (i + 1);
-
 }
 
 int Sorting::QuickPartitionSteps(int A[], int p, int r)
 
 {
-
-
-
 	x = A[r];// pivot
 	i = p - 1; // Index of smaller element
 
-
-
-
-	numofsteps++;  //j=p;
+	FinCount++;  //j=p;
 	for (j = p; j <= r - 1; j++)
 	{
-		numofsteps = numofsteps + 2; //j <= r - 1; j++
+		FinCount = FinCount + 2; //j <= r - 1; j++
 									 // If current element is smaller than or
 									 // equal to pivot
 		if (A[j] >= x)
 		{
-			numofsteps++;//A[j] <= x
+			FinCount++;//A[j] <= x
 		}
-
+		FinCount++;
 		if (A[j] <= x)
 		{
-			numofsteps = numofsteps + 5;//A[j] <= x i++ and swap a[i] and a[j]
+			FinCount = FinCount + 5;//A[j] <= x i++ and swap a[i] and a[j]
 
 			i++;    // increment index of smaller element
-
 					//exchange A[i] with A[j] 
 			temp = A[i];
 			A[i] = A[j];
 			A[j] = temp;
 
 		}
+		FinCount++;
 	}
-	numofsteps++;//j <=r//when j>r
+	//j <=r//when j>r
 
-	numofsteps = numofsteps + 4;//the swap with pivot and i+1 and return step
+	FinCount = FinCount + 4;//the swap with pivot and i+1 and return step
 								//exchange A[i+1] with A[r] 
 	temp = A[i + 1];
 	A[i + 1] = A[r];
 	A[r] = temp;
 	return (i + 1);
-
-	
-
-
-
-
 }
 
 
