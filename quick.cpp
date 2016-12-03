@@ -68,11 +68,8 @@ void Sorting::quickSortSteps(int arr[], int left, int right)
 		FinCount++;
 		while (arr[j] > pivot)
 		{
-<<<<<<< HEAD
 			j--;
-=======
-			j--
->>>>>>> origin/master
+
 			FinCount++;
 		}
 		FinCount++;
