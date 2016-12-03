@@ -10,6 +10,7 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case)
 	Bubble Sort =3
 	Merge Sort =4
 	Quick Sort =5
+	Improved bubble = 6
 	*/	
 
 	//myfile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
@@ -47,7 +48,12 @@ void Sorting::Print(int SortIdentifier, int CurrentSize,int Case)
 
 		QuickFile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
 		break;
+	case 6://Improved Bubble
+		if (!BubI)
+			PHead(SortIdentifier);
 
+		BubbleImpFile << Case << "," << CurrentSize << "," << FinCount << "," << FinTime << ",\n";
+		break;
 
 	}
 
@@ -82,6 +88,10 @@ void Sorting::PHead(int SortIdentifier)
 	else if (SortIdentifier == 5 && Quic == false) {
 		Quic = true;
 		QuickFile << "Case,Size,Steps,Time,\n";
+	}
+	else if (SortIdentifier == 6 && BubI == false) {
+		BubI = true;
+		BubbleFile << "Case,Size,Steps,Time,\n";
 	}
 }
 

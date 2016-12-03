@@ -31,15 +31,17 @@ public: //keep all main functions public and there subsidiary functions private.
 		InsertionFile.open("Insert.csv");
 		SelectionFile.open("Select.csv");
 		BubbleFile.open("PUTFILENAMEHERE");
+		BubbleImpFile.open("PUTFILENAMEHERE");
 		MergeFile.open("PUTFILENAMEHERE");
 		QuickFile.open("PUTFILENAMEHERE");
 
 
-		bool Ins=false;
-		bool Sel = false;
-		bool Bub = false;
-		bool Mer = false;
-		bool Quic = false;
+		Ins=false;
+		Sel = false;
+		Bub = false;
+		Mer = false;
+		Quic = false;
+		BubI = false;
 	}
 	~Sorting()
 	{
@@ -48,6 +50,7 @@ public: //keep all main functions public and there subsidiary functions private.
 		BubbleFile.close();
 		MergeFile.close();
 		QuickFile.close();
+		BubbleImpFile.close();
 	}
 	
 	
@@ -90,6 +93,7 @@ private://use significant names , Partition for quicksort = QuickPartition
 	ofstream InsertionFile;
 	ofstream SelectionFile;
 	ofstream BubbleFile;
+	ofstream BubbleImpFile;
 	ofstream MergeFile;
 	ofstream QuickFile;
 	void PHead(int SortIdentifier);
@@ -98,32 +102,36 @@ private://use significant names , Partition for quicksort = QuickPartition
 	bool Bub;
 	bool Mer;
 	bool Quic;
+	bool BubI;
 
 	//insertion sort stuff
 	int insertion_sortSTEPS(int arr[], int length);//returns the number of steps it takes to complete
-	double Sorting::insertion_sortTime(int arr[], int length);
+	double insertion_sortTime(int arr[], int length);
 	
 	//selection sort stuff
 	double selectionSortTime(int arr[], int n);
 	int selectionSortSteps(int arr[], int n);
 
 	//bubble sort stuff
-	void bubbleTime(int arr[], int n);
-	void bubbleSteps(int arr[], int n);
-	void improved_bubbleTime(int arr[], int n);
-	void improved_bubbleSteps(int arr[], int n);
+	double bubbleTime(int arr[], int n);
+	int bubbleSteps(int arr[], int n);
+	double improved_bubbleTime(int arr[], int n);
+	int improved_bubbleSteps(int arr[], int n);
 
 	
 	//merge sort stuff
+	double mergeSortcall(int arr[], int l, int r);
 	void merge(int arr[], int l, int m, int r);
 	void mergeSort(int arr[], int l, int r);
-	void merge1(int arr[], int l, int m, int r); //Still need to add these into mergesort.ccp
-	void mergesort2(int arr[], int l, int r);//^^^^^^^^^^^^^^^^^^^^^^^^
+
+	void merge1(int arr[], int l, int m, int r); //steps
+	void mergesort2(int arr[], int l, int r);//
 	
 	
 	
 	
 	//QuickSort Stuff
+	double quickSortTimecall(int arr[], int low, int high);
 	void quickSortTime(int arr[], int low, int high);
 	void quickSortSteps(int arr[], int low, int high);
 	int QuickPartitionTime(int A[], int p, int r);
