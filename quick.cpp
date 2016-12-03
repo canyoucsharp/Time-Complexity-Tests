@@ -88,11 +88,12 @@ void Sorting::quickSortSteps(int arr[], int low, int high)
 	if (left < j)
 	{
 		quickSort(arr, left, j);
-		FinCount++;
+		FinCount += 2;
 	}
 	if (i < right)
 	{
 		quickSort(arr, i, right);
+		FinCount += 2;
 	}
 	FinCount += 2;
 
