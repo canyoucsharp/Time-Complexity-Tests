@@ -652,33 +652,33 @@ void Sorting::test()
 
 	cs = 4;
 	int count = 0;
-	int Timeinsert, StepInsert, TimeSelection, StepSelection, TimeBubble, StepBubble, TimeMerge, StepMerge, TimeQuick, StepQuick, TimeBI, StepBI;
+	double Timeinsert[9]{ 0 }, StepInsert[9]{ 0 }, TimeSelection[9]{ 0 }, StepSelection[9]{ 0 }, TimeBubble, StepBubble, TimeMerge, StepMerge, TimeQuick, StepQuick, TimeBI, StepBI;
 	while (count < 50)
 	{
 		case4();
 
-		StepInsert += insertion_sortSTEPS(a100, 100);
-		Timeinsert += insertion_sortTime(a100, 100);
-		StepInsert += insertion_sortSTEPS(a200, 200);
-		Timeinsert += insertion_sortTime(a200, 200);
-		StepInsert += insertion_sortSTEPS(a300, 300);
-		Timeinsert += insertion_sortTime(a300, 300);
-		StepInsert += insertion_sortSTEPS(a400, 400);
-		Timeinsert += insertion_sortTime(a400, 400);
-		StepInsert += insertion_sortSTEPS(a500, 500);
-		Timeinsert += insertion_sortTime(a500, 500);
-		StepInsert += insertion_sortSTEPS(a1000, 1000);
-		Timeinsert += insertion_sortTime(a1000, 1000);
-		StepInsert += insertion_sortSTEPS(a2000, 2000);
-		Timeinsert += insertion_sortTime(a2000, 2000);
-		StepInsert += insertion_sortSTEPS(a4000, 4000);
-		Timeinsert += insertion_sortTime(a4000, 4000);
-		StepInsert += insertion_sortSTEPS(a10000, 10000);
-		Timeinsert += insertion_sortTime(a10000, 10000);
+		StepInsert[0] += insertion_sortSTEPS(a100, 100);
+		Timeinsert[0] += insertion_sortTime(a100, 100);
+		StepInsert[1] += insertion_sortSTEPS(a200, 200);
+		Timeinsert[1] += insertion_sortTime(a200, 200);
+		StepInsert[2] += insertion_sortSTEPS(a300, 300);
+		Timeinsert[2] += insertion_sortTime(a300, 300);
+		StepInsert[3] += insertion_sortSTEPS(a400, 400);
+		Timeinsert[3] += insertion_sortTime(a400, 400);
+		StepInsert[4] += insertion_sortSTEPS(a500, 500);
+		Timeinsert[4] += insertion_sortTime(a500, 500);
+		StepInsert[5] += insertion_sortSTEPS(a1000, 1000);
+		Timeinsert[5] += insertion_sortTime(a1000, 1000);
+		StepInsert[6] += insertion_sortSTEPS(a2000, 2000);
+		Timeinsert[6] += insertion_sortTime(a2000, 2000);
+		StepInsert[7] += insertion_sortSTEPS(a4000, 4000);
+		Timeinsert[7] += insertion_sortTime(a4000, 4000);
+		StepInsert[8] += insertion_sortSTEPS(a10000, 10000);
+		Timeinsert[8] += insertion_sortTime(a10000, 10000);
 
 		FinTime = 0;
 		FinCount = 0;
-
+		/*
 		FinCount = selectionSortSteps(a100, 100);
 		FinTime = selectionSortTime(a100, 100);
 		Print(2, 100, cs);
@@ -725,10 +725,9 @@ void Sorting::test()
 		StepSelection += FinCount;
 		TimeSelection += FinTime;
 
-
-
+		*/
+		count++;
 	}
-	cout << "Steps" << StepInsert << " Time" << Timeinsert;
 	
-
+	cout << "finished";
 }
