@@ -374,7 +374,7 @@ void Sorting::test()
 	Print(4, 10000, cs);
 	FinCount = 0;
 
-	/*
+	
 	//Quick Sort Case 2
 	quickSortSteps(a100, 0, 100 - 1);
 	FinTime = quickSortTimecall(a100, 0, 100 - 1);
@@ -413,7 +413,7 @@ void Sorting::test()
 	Print(5, 10000, cs);
 	FinCount = 0;
 
-	*/
+	
 
 	//Bubble Sort Improved Case 2
 	FinCount = improved_bubbleSteps(a100, 100);
@@ -579,7 +579,7 @@ void Sorting::test()
 	Print(4, 10000, cs);
 	FinCount = 0;
 
-	/*
+	
 	//Quick Sort Case 3
 	quickSortSteps(a100, 0, 100 - 1);
 	FinTime = quickSortTimecall(a100, 0, 100 - 1);
@@ -617,7 +617,7 @@ void Sorting::test()
 	FinTime = quickSortTimecall(a10000, 0, 10000 - 1);
 	Print(5, 10000, cs);
 	FinCount = 0;
-	*/
+	
 	
 
 	//Bubble Sort Improved Case 3
