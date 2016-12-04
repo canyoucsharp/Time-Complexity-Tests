@@ -93,72 +93,90 @@ void Sorting::case2()
 int size;
 
 size = 100;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a100[i] = i;
+	a100[j] = i;
+	j++;
 
 
 }
 
 size = 200;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a200[i] = i;
+	a200[j] = i;
+	j++;
 
 
 }
 
 size = 300;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a300[i] = i;
+	a300[j] = i;
+	j++;
 
 
 }
 
 
 size = 400;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a400[i] = i;
+	a400[j] = i;
+	j++;
 
 
 }
 
 size = 500;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a500[i] = i;
+	a500[j] = i;
+	j++;
 
 
 }
 
 size = 1000;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a1000[i] = i;
+	a1000[j] = i;
+	j++;
 
 
 }
 size = 2000;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a2000[i] = i;
+	a2000[j] = i;
+	j++;
 
 
 }
 
 size = 4000;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a4000[i] = i;
+	a4000[j] = i;
+	j++;
 
 
 }
 size = 10000;
+int j = 0;
 for (int i = size; i >0; i--)
 {
-	a10000[i] = i;
+	a10000[j] = i;
+	j++;
 
 
 }
