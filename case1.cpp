@@ -103,7 +103,7 @@ for (int i = size; i >0; i--)
 }
 
 size = 200;
-int j = 0;
+ j = 0;
 for (int i = size; i >0; i--)
 {
 	a200[j] = i;
@@ -113,7 +113,7 @@ for (int i = size; i >0; i--)
 }
 
 size = 300;
-int j = 0;
+ j = 0;
 for (int i = size; i >0; i--)
 {
 	a300[j] = i;
@@ -124,7 +124,7 @@ for (int i = size; i >0; i--)
 
 
 size = 400;
-int j = 0;
+ j = 0;
 for (int i = size; i >0; i--)
 {
 	a400[j] = i;
@@ -134,7 +134,7 @@ for (int i = size; i >0; i--)
 }
 
 size = 500;
-int j = 0;
+j = 0;
 for (int i = size; i >0; i--)
 {
 	a500[j] = i;
@@ -144,7 +144,7 @@ for (int i = size; i >0; i--)
 }
 
 size = 1000;
-int j = 0;
+ j = 0;
 for (int i = size; i >0; i--)
 {
 	a1000[j] = i;
@@ -153,7 +153,7 @@ for (int i = size; i >0; i--)
 
 }
 size = 2000;
-int j = 0;
+ j = 0;
 for (int i = size; i >0; i--)
 {
 	a2000[j] = i;
@@ -163,7 +163,7 @@ for (int i = size; i >0; i--)
 }
 
 size = 4000;
-int j = 0;
+ j = 0;
 for (int i = size; i >0; i--)
 {
 	a4000[j] = i;
@@ -172,7 +172,7 @@ for (int i = size; i >0; i--)
 
 }
 size = 10000;
-int j = 0;
+j = 0;
 for (int i = size; i >0; i--)
 {
 	a10000[j] = i;
