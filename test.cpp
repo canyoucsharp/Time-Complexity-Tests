@@ -9,20 +9,26 @@ void Sorting::display(int arr[],int size,ofstream &myfile)
 	
 	for (int i = 0; i < size; i++)
 	{
-		myfile << arr[i] << " ";
+		cout << arr[i] << " ";
 		if (i % 10 == 0 && i != 0)
 		{
-			myfile<< endl;
+			cout<< endl;
 		}
 
 	}
-	myfile << endl;
-	myfile << "********************************************************" << endl;
+	cout << endl;
+	cout << "********************************************************" << endl;
 
 }
-	
 
+int * Sorting::CopyArray(int * arr, int n)
+{
+	int *hold = new int[n];
+	for (int i = 0; i < n; i++)
+		hold[i] = arr[i];
 
+	return hold;
+}
 
 
 void Sorting::test()
@@ -37,13 +43,20 @@ void Sorting::test()
 	Quick Sort =5
 	Improved bubble = 6
 	*/
-
-
+	ofstream myfile;
+	InitReverseSorted();
+	int *hold =CopyArray(a100, 100);
+	display(a100, 100, myfile);
+	FinTime = insertion_sortTime(hold, 100);
+	display(hold, 100, myfile);
+	display(a100, 100, myfile);
+	return;
 	//case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1case 1
 	int cs = 1;
-	case1();
+	InitSorted();
 
 	//Insertion Sort Case 1
+
 	FinCount=insertion_sortSTEPS(a100,100);
 	FinTime=insertion_sortTime(a100, 100);
 	Print(1, 100, cs);
@@ -171,7 +184,7 @@ void Sorting::test()
 	FinCount = 0;
 	
 	//Quick Sort Case 1
-	/*
+	
 	quickSortSteps(a100, 0, 100 - 1);
 	FinTime = quickSortTimecall(a100, 0, 100 - 1);
 	Print(5, 100, cs);
@@ -209,7 +222,7 @@ void Sorting::test()
 	FinTime = quickSortTimecall(a10000, 0, 10000 - 1);
 	Print(5, 10000, cs);
 	FinCount = 0;
-	*/
+	
 	
 
 	//Bubble Sort Improved Case 1
@@ -244,7 +257,8 @@ void Sorting::test()
 
 	//case 2 case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2case 2s
 	cs = 2;
-	case2();
+	InitReverseSorted();
+
 	FinCount = 0;
 	//Insertion Sort Case 2
 	FinCount = insertion_sortSTEPS(a100, 100);
@@ -449,7 +463,7 @@ void Sorting::test()
 
 	//case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3case 3
 	cs = 3;
-	case3();
+	InitPermutation();
 	
 	//Insertion Sort Case 3
 	FinCount = insertion_sortSTEPS(a100, 100);
@@ -655,7 +669,7 @@ void Sorting::test()
 	double Timeinsert[9]{ 0 }, StepInsert[9]{ 0 }, TimeSelection[9]{ 0 }, StepSelection[9]{ 0 }, TimeBubble[9]{ 0 }, StepBubble[9]{ 0 }, TimeMerge[9]{ 0 }, StepMerge[9]{ 0 }, TimeQuick[9]{ 0 }, StepQuick[9]{ 0 }, TimeBI[9]{ 0 }, StepBI[9]{ 0 };
 	while (count < 50)
 	{
-		case4();
+		InitRandom();
 
 		StepInsert[0] += insertion_sortSTEPS(a100, 100);
 		Timeinsert[0] += insertion_sortTime(a100, 100);

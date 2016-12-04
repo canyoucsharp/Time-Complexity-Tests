@@ -2,7 +2,7 @@
 
 
 
-void Sorting::case1()
+void Sorting::InitSorted()
 {
 	
 	int size;
@@ -87,91 +87,28 @@ void Sorting::case1()
 
 }
 
-
-void Sorting::case2()
+void Sorting::DoReverseSort(int * arr, int n)
 {
-int size;
-
-size = 100;
-for (int i = size; i >0; i--)
-{
-	a100[i] = i;
-
-
+	for (int i = 0; i <n; i++)
+	{
+		arr[i] = n - i;
+	}
 }
-
-size = 200;
-for (int i = size; i >0; i--)
+void Sorting::InitReverseSorted()
 {
-	a200[i] = i;
-
-
-}
-
-size = 300;
-for (int i = size; i >0; i--)
-{
-	a300[i] = i;
-
-
+	DoReverseSort(a100, 100);
+	DoReverseSort(a200, 200);
+	DoReverseSort(a300, 300);
+	DoReverseSort(a400, 400);
+	DoReverseSort(a500, 500);
+	DoReverseSort(a1000, 1000);
+	DoReverseSort(a2000, 2000);
+	DoReverseSort(a4000, 4000);
+	DoReverseSort(a10000, 10000);
 }
 
 
-size = 400;
-for (int i = size; i >0; i--)
-{
-	a400[i] = i;
-
-
-}
-
-size = 500;
-for (int i = size; i >0; i--)
-{
-	a500[i] = i;
-
-
-}
-
-size = 1000;
-for (int i = size; i >0; i--)
-{
-	a1000[i] = i;
-
-
-}
-size = 2000;
-for (int i = size; i >0; i--)
-{
-	a2000[i] = i;
-
-
-}
-
-size = 4000;
-for (int i = size; i >0; i--)
-{
-	a4000[i] = i;
-
-
-}
-size = 10000;
-for (int i = size; i >0; i--)
-{
-	a10000[i] = i;
-
-
-}
-
-
-
-
-
-
-}
-
-
-void Sorting::case3()
+void Sorting::InitPermutation()
 {
 
 	int size;
@@ -271,7 +208,7 @@ void Sorting::case3()
 }
 
 
-void Sorting::case4()//generates random arrays for each array
+void Sorting::InitRandom()//generates random arrays for each array
 {
 	int size = 100;
 	for (int i = 0; i < size; i++)

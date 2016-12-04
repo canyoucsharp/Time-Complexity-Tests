@@ -58,10 +58,11 @@ public: //keep all main functions public and there subsidiary functions private.
 	
 	
 	
-	void case1();//initalize all the arrays to fit case 1 which is a sorted list of numbers
-	void case2();//initalize all the arrays to fit case 2 which is a sorted list of numbers backwards
-	void case3();//initialize all the arrays to fit case 3 which is a permuted list 
-	void case4();//initialize all the arrays to fit case 4 which is a random list
+	void InitSorted();//initalize all the arrays to fit case 1 which is a sorted list of numbers
+	void InitReverseSorted();//initalize all the arrays to fit case 2 which is a sorted list of numbers backwards
+	void InitPermutation();//initialize all the arrays to fit case 3 which is a permuted list 
+	void InitRandom();//initialize all the arrays to fit case 4 which is a random list
+	void DoReverseSort(int * arr,int n);
 	void test();
  void display(int arr[], int size, ofstream &myfile);
 	
@@ -88,6 +89,7 @@ private://use significant names , Partition for quicksort = QuickPartition
 	void randomize(int arr[], int n);//shuffles a list of numbers
 	void swap(int *a, int *b);//swaps two numbers used for case 3
 	void Print(int SortIdentifier, int CurrentSize, int Case);
+	int* CopyArray(int arr[],int n);
 	int FinCount;
 	double FinTime;
 
