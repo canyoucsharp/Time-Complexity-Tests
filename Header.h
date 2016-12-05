@@ -116,6 +116,16 @@ private://use significant names , Partition for quicksort = QuickPartition
 		return CopyArray(_a10000, 10000);
 	}
 		
+
+	//Call Functions
+	void CallGroup(int cs);
+	void InsCall(int * arr, int n,int cs);
+	void SelCall(int * arr, int n, int cs);
+	void BubCall(int * arr, int n, int cs);
+	void MergeCall(int * arr, int n, int cs);
+	void QuickCall(int * arr, int n, int cs);
+	void IBubCall(int * arr, int n, int cs);
+
 	//general stuff
 	int random(int n);
 	void randomize(int arr[], int n);//shuffles a list of numbers
