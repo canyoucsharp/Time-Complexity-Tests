@@ -2,7 +2,7 @@
 
 int Sorting:: insertion_sortSTEPS(int arr[], int length)//mit insertion sort implementation
 {
-	int * hold = new int[length];
+	int * hold = arr;
 	int numofsteps=0, j, k, temp;
 
 	numofsteps++;  //j=1

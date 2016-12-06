@@ -62,7 +62,7 @@ void Sorting::InitPermutation()
 	DoPermutation(_a10000, 10000);
 }
 
-void Sorting::DoRandom(int * arr, int n)
+void Sorting::DoRandom(int  *arr, int n)
 {
 	for (int i = 0; i < n; i++)
 		arr[i] = random(n);
