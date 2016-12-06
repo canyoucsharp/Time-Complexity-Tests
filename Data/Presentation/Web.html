@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+  <CENTER><h2>CSC 326 PROJECT</h2></CENTER>
+ <CENTER> <p><strong>CREATED BY BRIANO,DENNIS,MIKE</p></CENTER>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <Center>  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="btn btn-primary btn-lg" >Insertion Sort</a>
+		  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="btn btn-primary btn-lg" >Selection Sort</a>
+		  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="btn btn-primary btn-lg" >Bubble Sort</a>
+		  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="btn btn-primary btn-lg" >Merge Sort</a>
+		  <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="btn btn-primary btn-lg" >Quick Sort</a>
+		  <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" class="btn btn-primary btn-lg" >Sort Comparison</a>
+		  <a data-toggle="collapse" data-parent="#accordion" href="#collapse7" class="btn btn-primary btn-lg" >Improved Bubble</a>
+		  	<a class="btn btn-primary btn-lg" href="https://github.com/BrianoBruno/Time-Complexity-Tests" >Git</a>
+
+		  </center>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body"><center><img src="ICOM.png" alt="InsertionSortGif" style="width:678px;height:74px;"></CENTER></div>
+		
+		
+		
+	
+		<center><img src="https://www.codeproject.com/KB/recipes/SortVisualization/Insertion_Sort.gif" alt="InsertionSortGif" style="width:304px;height:228px;">
+		<img src="InsertionSteps.png" alt="Steps" style="width:304px;height:228px;" >
+		<img src="InsertionTime.png" alt="Time" style="width:304px;height:228px;">
+		</center>
+		<br>
+		<center><img src="InsertionTimeT.png" alt="STepTAble" style="width:450px;height:228px;">
+		<img src="InsertionTimeR.png" alt="TimeTAble" style="width:450px;height:228px;">
+		</center>
+		
+		
+		
+		<br>
+		<center><text>Insertion Sort Code</text></center>
+		<pre>
+void Sorting:: insertion_sortSTEPS(int arr[], int length)//mit insertion sort implementation
+{
+	int * hold = arr;
+	int j, k, temp;
+
+
+	for (j = 1; j < length; j++)
+	{
+		
+		temp = hold[j];
+		k = j - 1;
+		while (k >= 0 && hold[k] > temp)
+		{
+			hold[k + 1] = hold[k];
+			k--;
+		
+		}
+		
+		hold[k + 1] = temp;
+	}
+
+}
+</pre>
+		
+      </div>
+	  <div id="collapse2" class="panel-collapse collapse ">
+        <div class="panel-body"><center><img src="SCOM.png" alt="InsertionSortGif" style="width:678px;height:74px;"></div>
+		
+		
+		
+		<center>
+		<img src="https://www.codeproject.com/KB/recipes/SortVisualization/Selection_Sort.gif" alt="SelectionSortGif" style="width:304px;height:228px;">
+		<img src="SelectionSteps.png" alt="Steps" style="width:304px;height:228px;">
+		<img src="SelectionTime.png" alt="Time" style="width:304px;height:228px;">
+		</center>
+		<br>
+		<center><img src="SelectionStepsT.png" alt="STepTAble" style="width:450px;height:228px;">
+		<img src="SelectionTimeT.png" alt="TimeTAble" style="width:450px;height:228px;">
+		</center>
+		<center><text>Selection Sort Code</text></center>
+				<pre>
+double Sorting::selectionSortTime(int arr[], int n)
+{
+	int * hold = arr;
+	int i, j, min_idx, temp;
+
+	// One by one move boundary of unsorted subarray
+	for (i = 0; i < n - 1; i++)
+	{
+		// Find the minimum element in unsorted array
+		min_idx = i;
+		for (j = i + 1; j < n; j++)
+			if (hold[j] < hold[min_idx])
+				min_idx = j;
+
+		// Swap the found minimum element with the first element
+		temp = hold[min_idx];
+		hold[min_idx] = hold[i];
+		hold[i] = temp;
+
+		
+
+	}
+
+	return 0;
+
+}
+</pre>
+		
+      </div>
+	  <div id="collapse3" class="panel-collapse collapse"><!-- BubbleSort -->
+        <div class="panel-body"><center><img src="BCOM.png" alt="InsertionSortGif" style="width:678px;height:74px;"></div>
+		<center>
+		<img src="https://www.codeproject.com/KB/recipes/SortVisualization/Bubble_Sort.gif" alt="BubbleSortGif" style="width:304px;height:228px;">
+		<img src="BubbleSteps.png" alt="Steps" style="width:304px;height:228px;">
+		<img src="BubbleTimeT.png" alt="Time" style="width:304px;height:228px;">
+		</center>
+		<br>
+		<center><img src="BubbleSortSteps.png" alt="STepTAble" style="width:450px;height:228px;">
+		<img src="BubbleTimeTable.png" alt="TimeTAble" style="width:450px;height:228px;">
+		</center>
+		
+		<center><text>Bubble Sort Code</text></center>
+				<pre>
+double Sorting::bubbleTime(int arr[], int n)
+{
+	clock_t start, end;
+	
+	int * hold = arr;
+
+		for (i = 0; i < n - 1; i++)
+
+			// Last i elements are already in place   
+			for (j = 0; j < n - i - 1; j++)
+				if (hold[j] > hold[j + 1])
+				{
+					temp = hold[j];
+					hold[j] = hold[j + 1];
+					hold[j + 1] = temp;
+
+				}
+	
+		return msecs;
+
+	}
+</pre>
+
+
+
+
+
+
+
+
+
+
+		
+      </div>
+	  <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body"><center><img src="MCOM.png" alt="InsertionSortGif" style="width:678px;height:74px;"></div>
+		<center>
+		<img src="https://www.codeproject.com/KB/recipes/SortVisualization/Merge_Sort.gif" alt="MergeSortGif" style="width:304px;height:228px;">
+		<img src="MergeSteps.png" alt="Steps" style="width:304px;height:228px;">
+		<img src="MergeTime.png" alt="Time" style="width:304px;height:228px;">
+		</center>
+		<br>
+		<center><img src="MergeStepsT.png" alt="STepTAble" style="width:450px;height:228px;">
+		<img src="MergeTimeT.png" alt="TimeTAble" style="width:450px;height:228px;">
+		</center>
+		
+		
+		
+		
+		
+			<center><text>Merge Sort Code</text></center>
+				<pre>
+void Sorting::merge(int arr[], int l, int m, int r)//steps
+{
+	int i, j, k;
+	int n1 = m - l + 1;
+	int n2 = r - m;
+
+	/* create temp arrays */
+	int *L=new int[n1], *R=new int[n2];
+
+	/* Copy data to temp arrays L[] and R[] */
+	for (i = 0; i < n1; i++)
+		L[i] = arr[l + i];
+	for (j = 0; j < n2; j++)
+		R[j] = arr[m + 1 + j];
+
+	/* Merge the temp arrays back into arr[l..r]*/
+	i = 0; // Initial index of first subarray
+	j = 0; // Initial index of second subarray
+	k = l; // Initial index of merged subarray
+	while (i < n1 && j < n2)
+	{
+		if (L[i] <= R[j])
+		{
+			arr[k] = L[i];
+			i++;
+		}
+		else
+		{
+			arr[k] = R[j];
+			j++;
+		}
+		k++;
+	}
+
+	/* Copy the remaining elements of L[], if there
+		       are any */
+	while (i < n1)
+	{
+		arr[k] = L[i];
+		i++;
+		k++;
+	}
+
+	/* Copy the remaining elements of R[], if there
+		       are any */
+	while (j < n2)
+	{
+		arr[k] = R[j];
+		j++;
+		k++;
+	}
+}
+
+/* l is for left index and r is right index of the
+   sub-array of arr to be sorted */
+void Sorting::mergeSort(int arr[], int l, int r)//steps
+{
+	if (l < r)
+	{
+		// Same as (l+r)/2, but avoids overflow for
+		// large l and h
+		int m = l + (r - l) / 2;
+
+		// Sort first and second halves
+		mergeSort(arr, l, m);
+		mergeSort(arr, m + 1, r);
+
+		merge(arr, l, m, r);
+	}
+}
+
+
+}
+</pre>
+		
+		
+		
+		
+      </div>
+	  <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body"><center><img src="QCOM.png" alt="InsertionSortGif" style="width:678px;height:74px;"></div>
+		<center>
+		<img src="https://www.codeproject.com/KB/recipes/SortVisualization/Quick_Sort.gif" alt="QuickSortGif" style="width:304px;height:228px;">
+		<img src="QuickSteps.png" alt="Steps" style="width:304px;height:228px;">
+		<img src="QuickTime.png" alt="Time" style="width:304px;height:228px;">
+		</center>
+		<br>
+		<center><img src="QuickStepsT.png" alt="STepTAble" style="width:450px;height:228px;">
+		<img src="QuickTimeT.png" alt="TimeTAble" style="width:450px;height:228px;">
+		</center>
+		
+		<center><text>Quick Sort Code</text></center>
+				<pre>
+
+clock_t start, end_;
+int x, i, temp, j, numofsteps=0;
+
+
+double Sorting::quickSortTimecall(int arr[], int low, int high)
+{
+	int * hold = arr;
+	start = clock();
+	quickSortTime(hold, low, high);
+	end_ = clock();
+	double msecs = ((double)(end_ - start)) * 1000 / CLOCKS_PER_SEC;
+	return msecs;
+}
+
+
+void Sorting::quickSortTime(int arr[], int left, int right)
+{
+	int i = left, j = right;
+	int tmp;
+	int pivot = arr[(left + right) / 2];
+
+	/* partition */
+	while (i <= j) {
+		while (arr[i] < pivot)
+			i++;
+		while (arr[j] > pivot)
+			j--;
+		if (i <= j) {
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+		}
+	};
+
+	/* recursion */
+	if (left < j)
+		quickSortTime(arr, left, j);
+	if (i < right)
+		quickSortTime(arr, i, right);
+}
+
+
+
+int Sorting::QuickPartitionTime(int A[], int p, int r)
+{
+	x = A[r];// pivot
+	i = p - 1; // Index of smaller element
+
+	
+	for ( j =p; j <=r - 1; j++)
+	{
+		// If current element is smaller than or
+		// equal to pivot
+		if (A[j] <= x)
+		{
+			i++;    // increment index of smaller element
+					//exchange A[i] with A[] 
+			temp = A[i];
+			A[i] = A[j];
+			A[j] = temp;
+		}
+	}
+	
+	
+	
+	//exchange A[i+1] with A[r] 
+	temp = A[i + 1];
+	A[i + 1] = A[r];
+	A[r] = temp;
+	return (i + 1);
+}
+
+</pre>
+      </div>
+	  <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body"><Center>Comparison Of Sorts</div>
+		
+		<Center><img src="BigComp.png" alt="SortedSteps" style="width:1000px;height:500px;"></center>
+		<Center><img src="AllSteps.png" alt="SortedSteps" style="width:500px;height:300px;"><img src="SortedTime.png" alt="SortedTime" style="width:500px;height:300px;"></center>
+		<Center><img src="RandomSteps.png" alt="SortedSteps" style="width:500px;height:300px;"><img src="RandomTime.png" alt="SortedTime" style="width:500px;height:300px;"></center>
+		<Center><img src="ReverseSteps.png" alt="SortedSteps" style="width:500px;height:300px;"><img src="ReverseTimes.png" alt="SortedTime" style="width:500px;height:300px;"></center>
+		<Center><img src="AverageSteps.png" alt="SortedSteps" style="width:500px;height:300px;"><img src="AverageTime.png" alt="SortedTime" style="width:500px;height:300px;"></center>
+		
+		
+		
+		
+      </div>
+	  	  <div id="collapse7" class="panel-collapse collapse">
+        <div class="panel-body"><Center>Improved Bubble Sort</div>
+			<center>
+
+		<img src="IBubStep.png" alt="Steps" style="width:304px;height:228px;">
+		<img src="IBubTime.png" alt="Time" style="width:304px;height:228px;">
+		</center>
+		<br>
+		<center><img src="IBubStepT.png" alt="STepTAble" style="width:450px;height:228px;">
+		<img src="IBubTimeT.png" alt="TimeTAble" style="width:450px;height:228px;">
+		</center>
+		<pre>
+		
+double Sorting::improved_bubbleTime(int arr[], int n)
+{
+	clock_t start, end;
+	bool swapped = true;
+	int j = 0, tmp;
+	int * hold = arr;
+
+	start = clock();
+	while (swapped) {
+		swapped = false;
+		j++;
+		for (int i = 0; i < n - j; i++) {
+			if (hold[i] > hold[i + 1]) {
+				tmp = hold[i];
+				hold[i] = hold[i + 1];
+				hold[i + 1] = tmp;
+				swapped = true;
+			}
+		}
+	}
+	end = clock();
+	double msecs = ((double)(end - start)) * 1000 / CLOCKS_PER_SEC;
+	return msecs;
+}
+</pre>
+		
+		
+      </div>
+	  
+	  
+	  
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>
+

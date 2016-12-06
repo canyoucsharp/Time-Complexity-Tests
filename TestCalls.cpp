@@ -45,6 +45,7 @@ void Sorting::IBubCall(int * arr, int n, int cs)
 	FinCount = improved_bubbleSteps(arr, n);
 	FinTime = improved_bubbleTime(arr, n);
 	Print(6, n, cs);
+	FinCount = 0;
 }
 
 
