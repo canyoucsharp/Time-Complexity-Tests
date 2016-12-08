@@ -22,6 +22,7 @@ int Sorting:: insertion_sortSTEPS(int arr[], int length)//mit insertion sort imp
 	numofsteps++;//j < length;
 
 	return numofsteps;
+
 }
 
 double Sorting::insertion_sortTime(int arr[], int length)//returns the amount of time it takes too run the program
