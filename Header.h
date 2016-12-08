@@ -182,6 +182,7 @@ private://use significant names , Partition for quicksort = QuickPartition
 	double quickSortTimecall(int arr[], int low, int high);
 	void quickSortTime(int arr[], int low, int high);
 	void quickSortSteps(int arr[], int low, int high);
+	int partitionsteps(int arr[], int low, int high);
 };
 
 #endif
